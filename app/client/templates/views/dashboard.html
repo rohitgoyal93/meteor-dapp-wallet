@@ -11,11 +11,11 @@
         {{/if}}
 
         {{#if hasAccounts}}
-        
+
             <h2>{{i18n "wallet.accounts.accountsTitle"}}</h2>
-            <p>
+            <!-- <p>
                 {{i18n "wallet.accounts.accountsDescription"}}
-            </p>
+            </p> -->
             <div class="dapp-clear-fix"></div>
 
             <div class="wallet-box-list">
@@ -34,21 +34,21 @@
             {{/if}}
 
 
-            <h2>{{i18n "wallet.accounts.walletsTitle"}}</h2>
-            
-            {{#if hasMinimumBalance}}
+            <!-- <h2>{{i18n "wallet.accounts.walletsTitle"}}</h2> -->
+
+            <!-- {{#if hasMinimumBalance}}
                 <p>
-                    {{i18n "wallet.accounts.walletsDescription"}}     
+                    {{i18n "wallet.accounts.walletsDescription"}}
                 </p>
             {{else}}
                 <p>
                     {{{i18n "wallet.accounts.walletsDescriptionNotEnoughFunds"}}}
-                </p>           
-            {{/if}}
+                </p>
+            {{/if}} -->
 
-            
 
-            <div class="wallet-box-list">
+
+            <!-- <div class="wallet-box-list">
             {{#each wallets}}
                 {{> elements_account account=_id wallets=true}}
             {{/each}}
@@ -64,7 +64,7 @@
                     </div>
                     <h3>{{i18n "wallet.app.buttons.addWallet"}}</h3>
                 </a>
-            {{/if}}
+            {{/if}} -->
 
         {{else}}
             <div class="col col-5 mobile-full ">
@@ -87,7 +87,7 @@
         <div class="dapp-clear-fix"></div>
 
 
-        {{#if allTransactions}}
+        <!-- {{#if allTransactions}}
             <h2>{{i18n 'wallet.transactions.latest'}}</h2>
 
             {{> elements_transactions_table limit=5}}
@@ -95,6 +95,6 @@
         {{else}}
 
             <h2>{{i18n 'wallet.transactions.none'}}</h2>
-        {{/if}}
+        {{/if}} -->
     </div>
 </template>
