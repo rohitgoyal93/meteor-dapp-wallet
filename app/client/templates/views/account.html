@@ -40,7 +40,7 @@
                 </header>
 
 
-                {{#with tokens}}
+                <!-- {{#with tokens}}
                     <table class="token-list dapp-zebra">
                         <tbody>
                             {{#each this}}
@@ -58,18 +58,18 @@
                             {{/each}}
                         </tbody>
                     </table>
-                {{/with}}
+                {{/with}} -->
 
-                {{#with isVulnerable}}
+                <!-- {{#with isVulnerable}}
                     {{#if vulnerabilities.txorigin}}
                         {{> elements_vulnerabilities_txorigin}}
                     {{/if}}
-                {{/with}}
+                {{/with}} -->
 
-                {{#if owners}}
+                <!-- {{#if owners}} -->
                     <!-- Wallet infos -->
 
-                    <div class="row clear wallet-info">
+                    <!-- <div class="row clear wallet-info">
                         {{#if showDailyLimit}}
                             <div class="col col-4 mobile-full">
                                 {{#if $gte version 1}}
@@ -94,26 +94,26 @@
                                 </span>
                             {{/each}}
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Account infos -->
-                    <div class="account-info">
+                    <!-- <div class="account-info">
                         <h3>{{i18n "wallet.app.texts.note"}}</h3>
                         <p>{{i18n "wallet.accounts.walletNote"}}</p>
                     </div>
-                {{/if}}
+                {{/if}} -->
 
-                {{#if $eq type "account"}}
+                <!-- {{#if $eq type "account"}} -->
                     <!-- Account infos -->
-                    <div class="account-info">
+                    <!-- <div class="account-info">
                         <h3>{{i18n "wallet.app.texts.note"}}</h3>
                         <p>{{{i18n "wallet.accounts.accountNote"}}}</p>
-                    </div>
-                {{/if}}
+                    </div> -->
+                <!-- {{/if}} -->
 
             </div>
 
-            {{#unless isVulnerable}}
+            <!-- {{#unless isVulnerable}}
             <aside class="dapp-actionbar">
                 <nav>
                     <ul>
@@ -170,7 +170,7 @@
 
             {{#if jsonInterface}}
                 {{> elements_executeContract address=address jsonInterface=jsonInterface}}
-            {{/if}}
+            {{/if}} -->
 
 
             <div class="accounts-transactions">

@@ -19,9 +19,24 @@
             <div class="dapp-clear-fix"></div>
 
             <div class="wallet-box-list">
+              <table class="table table-bordered">
+                <!-- <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Wallet Balance</th>
+                    <th>Wallet Address</th>
+                    <th>Copy Link</th>
+                  </tr>
+                </thead> -->
+                <tbody>
                 {{#each accounts}}
-                    {{> elements_account account=_id}}
+                    <tr>
+                    <!-- {{> elements_account account=_id}} -->
+                    {{> elements_accountRow account=_id}}
+                  </tr>
                 {{/each}}
+              </tbody>
+              </table>
             </div>
 
             {{#if isMist}}

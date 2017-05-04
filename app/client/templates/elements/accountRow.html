@@ -1,0 +1,33 @@
+<template name="elements_accountRow">
+    {{#with account}}
+
+            <td>
+              <a href="{{pathFor route='account' address=address}}">
+                        {{name}}
+          </a>
+          </td>
+
+          <td>
+            {{#unless creating}}
+                {{> elements_balance balance=balance}}
+            {{else}}
+                {{#if imported}}
+                    <span class="account-balance">{{i18n "wallet.accounts.importing"}} <span>...</span></span>
+                {{else}}
+                    <span class="account-balance">{{i18n "wallet.accounts.creating"}} <span>...</span></span>
+                {{/if}}
+            {{/unless}}
+          </td>
+
+            <td>
+            <span id={{elementId}} class="account-id {{#if creating}}creating{{/if}}">{{toChecksumAddress address}}</span>
+          </td>
+
+          <td>
+            <button class="copy-to-clipboard-button">
+                <i class="icon-docs"></i>
+                {{i18n "wallet.accounts.buttons.copyAddress"}}
+            </button></td>
+
+    {{/with}}
+</template>
