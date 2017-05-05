@@ -3,7 +3,7 @@
 
         <div class="dapp-container accounts-page">
 
-            <div class="dapp-sticky-bar dapp-container">
+            <!-- <div class="dapp-sticky-bar dapp-container">
 
                 {{#with isVulnerable}}
                     {{#if vulnerabilities.txorigin}}
@@ -20,16 +20,16 @@
                     </h1>
                     {{> elements_balance balance=balance changeUnit=true showAllDecimals=true}}
                 {{/with}}
-            </div>
+            </div> -->
 
             <div class="accounts-page-summary">
-                {{> dapp_identicon identity=address}}
-                <header>
+                <!-- {{> dapp_identicon identity=address}} -->
+                <!-- <header> -->
                     <h1>
                         <span class="edit-name">{{name}}</span> <i class="edit-icon icon-pencil"></i>
-                        {{#if $or owners jsonInterface}}
+                        <!-- {{#if $or owners jsonInterface}}
                             <button class="dapp-icon-button delete icon-trash"></button>
-                        {{/if}}
+                        {{/if}} -->
                     </h1>
                     <h2 class="copyable-address">{{walletIcon}}
                         <!-- <input type="text" value="{{toChecksumAddress address}}" readonly class=""> -->
@@ -37,7 +37,7 @@
                     </h2>
                     <div class="clear"></div>
                     {{> elements_balance balance=balance changeUnit=false showAllDecimals=true}}
-                </header>
+                <!-- </header> -->
 
 
                 <!-- {{#with tokens}}
@@ -187,7 +187,7 @@
                     {{> elements_transactions_table ids=transactions account=_id}}
                 {{/if}}
 
-                {{#with customContract}}
+                <!-- {{#with customContract}}
                     <h2>{{i18n 'wallet.events.latest'}}</h2>
                     <br>
 
@@ -203,7 +203,7 @@
                     {{/if}}
 
                     {{> elements_event_table ids=contractEvents}}
-                {{/with}}
+                {{/with}} -->
             </div>
         </div>
     {{/with}}
