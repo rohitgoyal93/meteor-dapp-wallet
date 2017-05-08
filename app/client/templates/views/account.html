@@ -3,7 +3,7 @@
 
         <div class="dapp-container accounts-page">
 
-            <div class="dapp-sticky-bar dapp-container">
+            <!-- <div class="dapp-sticky-bar dapp-container">
 
                 {{#with isVulnerable}}
                     {{#if vulnerabilities.txorigin}}
@@ -20,27 +20,27 @@
                     </h1>
                     {{> elements_balance balance=balance changeUnit=true showAllDecimals=true}}
                 {{/with}}
-            </div>
+            </div> -->
 
             <div class="accounts-page-summary">
-                {{> dapp_identicon identity=address}}
-                <header>
+                <!-- {{> dapp_identicon identity=address}} -->
+                <!-- <header> -->
                     <h1>
                         <span class="edit-name">{{name}}</span> <i class="edit-icon icon-pencil"></i>
-                        {{#if $or owners jsonInterface}}
+                        <!-- {{#if $or owners jsonInterface}}
                             <button class="dapp-icon-button delete icon-trash"></button>
-                        {{/if}}
+                        {{/if}} -->
                     </h1>
                     <h2 class="copyable-address">{{walletIcon}}
                         <!-- <input type="text" value="{{toChecksumAddress address}}" readonly class=""> -->
                         <span>{{toChecksumAddress address}}</span>
                     </h2>
                     <div class="clear"></div>
-                    {{> elements_balance balance=balance changeUnit=true showAllDecimals=true}}
-                </header>
+                    {{> elements_balance balance=balance changeUnit=false showAllDecimals=true}}
+                <!-- </header> -->
 
 
-                {{#with tokens}}
+                <!-- {{#with tokens}}
                     <table class="token-list dapp-zebra">
                         <tbody>
                             {{#each this}}
@@ -58,18 +58,18 @@
                             {{/each}}
                         </tbody>
                     </table>
-                {{/with}}
+                {{/with}} -->
 
-                {{#with isVulnerable}}
+                <!-- {{#with isVulnerable}}
                     {{#if vulnerabilities.txorigin}}
                         {{> elements_vulnerabilities_txorigin}}
                     {{/if}}
-                {{/with}}
+                {{/with}} -->
 
-                {{#if owners}}
+                <!-- {{#if owners}} -->
                     <!-- Wallet infos -->
 
-                    <div class="row clear wallet-info">
+                    <!-- <div class="row clear wallet-info">
                         {{#if showDailyLimit}}
                             <div class="col col-4 mobile-full">
                                 {{#if $gte version 1}}
@@ -94,26 +94,26 @@
                                 </span>
                             {{/each}}
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Account infos -->
-                    <div class="account-info">
+                    <!-- <div class="account-info">
                         <h3>{{i18n "wallet.app.texts.note"}}</h3>
                         <p>{{i18n "wallet.accounts.walletNote"}}</p>
                     </div>
-                {{/if}}
+                {{/if}} -->
 
-                {{#if $eq type "account"}}
+                <!-- {{#if $eq type "account"}} -->
                     <!-- Account infos -->
-                    <div class="account-info">
+                    <!-- <div class="account-info">
                         <h3>{{i18n "wallet.app.texts.note"}}</h3>
                         <p>{{{i18n "wallet.accounts.accountNote"}}}</p>
-                    </div>
-                {{/if}}
+                    </div> -->
+                <!-- {{/if}} -->
 
             </div>
 
-            {{#unless isVulnerable}}
+            <!-- {{#unless isVulnerable}}
             <aside class="dapp-actionbar">
                 <nav>
                     <ul>
@@ -170,7 +170,7 @@
 
             {{#if jsonInterface}}
                 {{> elements_executeContract address=address jsonInterface=jsonInterface}}
-            {{/if}}
+            {{/if}} -->
 
 
             <div class="accounts-transactions">
@@ -187,7 +187,7 @@
                     {{> elements_transactions_table ids=transactions account=_id}}
                 {{/if}}
 
-                {{#with customContract}}
+                <!-- {{#with customContract}}
                     <h2>{{i18n 'wallet.events.latest'}}</h2>
                     <br>
 
@@ -203,7 +203,7 @@
                     {{/if}}
 
                     {{> elements_event_table ids=contractEvents}}
-                {{/with}}
+                {{/with}} -->
             </div>
         </div>
     {{/with}}
