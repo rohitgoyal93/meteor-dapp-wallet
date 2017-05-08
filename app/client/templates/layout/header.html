@@ -18,12 +18,12 @@
             <li class="block-info dapp-flex-item  {{#if TemplateVar.get 'syncing'}}syncing{{/if}}">
                 {{#unless isMistMode}}
 
-                    {{#if $eq ($.Session.get "network") "test"}}
+                    <!-- {{#if $eq ($.Session.get "network") "test"}}
                         <span class="private-chain" title="{{i18n 'wallet.app.texts.testnetExplain'}}">TEST-NET</span> &nbsp;&nbsp;
                     {{/if}}
                     {{#if $eq ($.Session.get "network") "private"}}
                         <span class="private-chain" title="{{i18n 'wallet.app.texts.testnetExplain'}}">PRIVATE-NET</span> &nbsp;&nbsp;
-                    {{/if}}
+                    {{/if}} -->
 
                     {{#with TemplateVar.get "syncing"}}
                         <span class="text">
