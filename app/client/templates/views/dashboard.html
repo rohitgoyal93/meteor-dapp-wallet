@@ -12,7 +12,12 @@
 
         {{#if hasAccounts}}
 
-            <h2>{{i18n "wallet.accounts.accountsTitle"}}</h2>
+            <h2 class="clearfix">
+              <div class="MT7" style="float:left;">{{i18n "wallet.accounts.accountsTitle"}} </div>
+              <button style="float:right;" class="wallet-box create account btn-red">
+                  Create New Wallet
+              </button>
+            </h2>
             <!-- <p>
                 {{i18n "wallet.accounts.accountsDescription"}}
             </p> -->
@@ -20,15 +25,14 @@
 
             <div class="wallet-box-list">
               <table class="table table-bordered">
-                <!-- <thead>
+
+                <tbody>
                   <tr>
                     <th>Name</th>
                     <th>Wallet Balance</th>
                     <th>Wallet Address</th>
                     <th>Copy Link</th>
                   </tr>
-                </thead> -->
-                <tbody>
                 {{#each accounts}}
                     <tr>
                     <!-- {{> elements_account account=_id}} -->
@@ -40,12 +44,12 @@
             </div>
 
             {{#if isMist}}
-                <button class="wallet-box create account">
+                <!-- <button class="wallet-box create account">
                     <div class="account-pattern">
                         +
                     </div>
-                    <h3>{{i18n "wallet.app.buttons.addAccount"}}</h3>
-                </button>
+                    <h3 class="account-pattern">{{i18n "wallet.app.buttons.addAccount"}}</h3>
+                </button> -->
             {{/if}}
 
 
