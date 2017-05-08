@@ -11,6 +11,9 @@ The dashboard template
 @constructor
 */
 
+function updateCoinbase(){
+      EthAccounts.update({address:web3.eth.coinbase},{$set:{name:"Primary Wallet"}});
+}
 
 Template['views_dashboard'].helpers({
     /**
@@ -39,15 +42,20 @@ Template['views_dashboard'].helpers({
 
         return accounts;
     },
-    /** 
+    /**
     Are there any accounts?
 
     @method (hasAccounts)
     */
     'hasAccounts' : function() {
-        return (EthAccounts.find().count() > 0);
+        var total = EthAccounts.find().count();
+        if(total > 0){
+          updateCoinbase();
+        }
+        return (total > 0);
+        // return (EthAccounts.find().count() > 0);
     },
-    /** 
+    /**
     Are there any accounts?
 
     @method (hasAccounts)

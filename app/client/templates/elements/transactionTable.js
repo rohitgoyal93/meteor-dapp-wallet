@@ -43,13 +43,22 @@ Template['elements_transactions_table'].helpers({
     @method (items)
     @return {Object} The items cursor
     */
+
+    'log' : function(){
+      console.log("transaction table",this);
+    },
+
     'items': function(){
+
         var template = Template.instance(),
             items = [],
             searchQuery = TemplateVar.get('search'),
             limit = TemplateVar.get('limit'),
             collection = window[this.collection] || Transactions,
             selector = this.ids ? {_id: {$in: this.ids}} : {};
+
+            console.log("windows",window[this.collection]);
+            console.log("Transactions",Transactions);
 
         // if search
         if(searchQuery) {
@@ -75,11 +84,17 @@ Template['elements_transactions_table'].helpers({
 
                 return false;
             });
+            console.log("items called with sq");
             items = items.slice(0, defaultLimit * 4);
             return items;
 
         } else {
-            template._properties.cursor = collection.find(selector, {sort: {timestamp: -1, blockNumber: -1}, limit: limit});
+          console.log("items called");
+          console.log(collection);
+          console.log("selection is", selector);
+          console.log("limit is",limit);
+            template._properties.cursor = collection.find({}, {sort: {timestamp: -1, blockNumber: -1}, limit: limit});
+            console.log(template._properties.cursor.fetch());
             return template._properties.cursor.fetch();
         }
     },
@@ -375,4 +390,3 @@ Template['elements_transactions_row'].events({
         }
     }
 });
-
