@@ -57,6 +57,7 @@ Template['elements_transactions_table'].helpers({
             collection = window[this.collection] || Transactions,
             selector = this.ids ? {_id: {$in: this.ids}} : {};
 
+            // console.log("search ")
             console.log("windows",window[this.collection]);
             console.log("Transactions",Transactions);
 
@@ -93,7 +94,7 @@ Template['elements_transactions_table'].helpers({
           console.log(collection);
           console.log("selection is", selector);
           console.log("limit is",limit);
-            template._properties.cursor = collection.find({}, {sort: {timestamp: -1, blockNumber: -1}, limit: limit});
+            template._properties.cursor = collection.find(selector, {sort: {timestamp: -1, blockNumber: -1}, limit: limit});
             console.log(template._properties.cursor.fetch());
             return template._properties.cursor.fetch();
         }
@@ -158,7 +159,7 @@ Template['elements_transactions_row'].helpers({
     'transactionType': function(){
         var to = Helpers.getAccountByAddress(this.to),
             from = Helpers.getAccountByAddress(this.from),
-            initiator = Helpers.getAccountByAddress(this.initiator), 
+            initiator = Helpers.getAccountByAddress(this.initiator),
             sendData = this.data;
 
         if(from)
@@ -169,7 +170,7 @@ Template['elements_transactions_row'].helpers({
 
         if(this.type === 'pendingConfirmation')
             return new Spacebars.SafeString(TAPi18n.__('wallet.transactions.types.pendingConfirmations', {initiator: initiator, from: from}));
-        else if(this.outOfGas) 
+        else if(this.outOfGas)
             return TAPi18n.__('wallet.transactions.types.outOfGas');
         else if(this.tokenId && Tokens.findOne(this.tokenId))
             return TAPi18n.__('wallet.transactions.types.tokenTransfer', {token: Tokens.findOne(this.tokenId).name});
@@ -328,7 +329,7 @@ Template['elements_transactions_row'].events({
                     ? 'confirm'
                     : 'revoke';
 
-            
+
 
             // sending the confirm tx
             var sendConfirmation = function(owner){
@@ -339,7 +340,7 @@ Template['elements_transactions_row'].events({
                 var callback = function(error, hash){
                     if(!error) {
                         console.log(type +' confirmation tx hash: '+ hash);
-                        
+
                         PendingConfirmations.update(_this._id, {$set: {
                             sending: owner
                         }});
