@@ -1,7 +1,12 @@
 <template name="layout_header">
 
-    <nav>
-        <ul>
+    <nav class="clearfix">
+
+       <div class="daxx-logo pull-left">
+            <img src="daxxcoin.png"/>
+       </div>
+
+        <ul class="pull-right">
             <li>
                 <a href="{{pathFor route='dashboard'}}" class="{{isActiveRoute regex='dashboard'}}">
                     <i class="icon-wallet"></i>
@@ -14,6 +19,13 @@
                     <span>{{i18n 'wallet.app.buttons.send'}}</span>
                 </a>
             </li>
+
+            <!-- <li>
+                <a href="{{goToReceive}}" class="{{isActiveRoute regex='receive'}}">
+                    <i class="icon-arrow-down"></i>
+                    <span>Recieve</span>
+                </a>
+            </li> -->
 
             <li class="block-info dapp-flex-item  {{#if TemplateVar.get 'syncing'}}syncing{{/if}}">
                 {{#unless isMistMode}}

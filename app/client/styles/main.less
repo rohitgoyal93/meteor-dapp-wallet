@@ -3,7 +3,7 @@
 
 @import 'elements.import.less';
 
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700');
 
 
 /**********************************/
@@ -69,6 +69,11 @@
 
 
 body {
+  font-family: 'Montserrat', sans-serif;
+  color: #58666e !important;
+  font-size:14px !important;
+	 font-weight:300;
+	 letter-spacing:0.2px;
     background: @colorWinBackgroundFocus;
 
     &.app-blur {
@@ -205,7 +210,8 @@ body {
         //color: lighten(@colorGrayDark, 30%);
         color: #fff;
         text-align: center;
-        flex: 1 0;
+        // flex: 1 0;
+        margin:0 30px;
 
         &.syncing {
             .opacity(0.9);
@@ -940,7 +946,16 @@ h2 {
 }
 
 .daxx-logo{
-  width: 100px;
+  width: 180px;
+}
+
+.daxx-logo img{
+  width:100%;
+}
+
+.dapp-small .daxx-logo{
+  width: 110px;
+ padding-top: 18px;
 }
 
 .clearfix:after {
@@ -1020,8 +1035,8 @@ table tr:nth-child(even){
   margin-top: 10px;
 }
 
-.MT25{
-  margin-top: 25px;
+.MT5{
+  margin-top: 5px;
 }
 
 .padd0{
@@ -1037,6 +1052,10 @@ table tr:nth-child(even){
 
 .dapp-identicon,.icon-shield{
    display: none;
+}
+
+input, select, textarea{
+  margin-top:0;
 }
 
 .dapp-select-account select,.send-input{
@@ -1073,6 +1092,18 @@ table tr:nth-child(even){
 
 input:disabled, select:disabled, textarea:disabled{
   opacity: 0.7;
+}
+
+.pull-right{
+  float: right !important;
+}
+
+.pull-left{
+  float: left !important;
+}
+
+.dapp-header{
+  height:auto;
 }
 
 /* ---------------------custom changes -------------------*/
