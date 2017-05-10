@@ -46,7 +46,7 @@
         <!-- amount -->
         <div class="row clear">
             <div class="col col-12 mobile-full amount">
-                <h3 class="col col-3 text-right MT10">{{i18n 'wallet.send.amount'}}</h3>
+                <h3 class="col col-3 text-right MT25">{{i18n 'wallet.send.amount'}}</h3>
                 <!-- {{#if TemplateVar.get "sendAll"}}
                     {{#if $eq (TemplateVar.get "selectedToken") "ether"}}
                         <input type="text" name="amount" class="dapp-large" value="{{clearAmountFromChars (dapp_formatBalance sendAllAmount '0,0.[000000000000000000]')}}" disabled>
@@ -55,7 +55,7 @@
                     {{/if}}
                 {{else}} -->
                     <div class="col col-6">
-                       <input type="text" min="0" step="any" name="amount" placeholder="0.0" class="dapp-large" pattern="[0-9\.,]*">
+                       <input type="text" min="0" step="any" name="amount" placeholder="0.0" class="dapp-large send-input" pattern="[0-9\.,]*">
 
                        <p class="send-info">
                            <!-- {{#if $eq (TemplateVar.get "selectedToken") "ether"}} -->
@@ -163,7 +163,7 @@
         <!-- Total -->
         <div class="row clear total">
             <div class="col col-12 mobile-full">
-                <h3 class="col col-3 text-right">{{i18n "commonWords.total"}}</h3>
+                <h3 class="col col-3 text-right MT10">{{i18n "commonWords.total"}}</h3>
                 <!-- {{#if $eq (TemplateVar.get "selectedToken") "ether"}} -->
                     <span class="amount col col-6">{{getDaxxString total "0,0.00[0000000000000000]"}}</span>
                     <!-- {{#if $neq unit 'ether'}} -->
@@ -188,7 +188,9 @@
         <hr>
 
         <!-- a button type="submit" will send the form -->
-<div style="text-align:center">
+<div class="row clearfix padd0">
+  <div class="col col-3"> &nbsp;</div>
+  <div class="col col-6">
         <button type="submit" class="dapp-block-button">
             {{#if TemplateVar.get "sending"}}
                 {{i18n 'buttons.sending'}}
@@ -200,6 +202,7 @@
                 {{/if}}
             {{/if}}
         </button>
+    </div>
 </div>
 
     </form>
