@@ -1,4 +1,5 @@
 <template name="layout_header">
+
     <nav>
         <ul>
             <li>
@@ -12,17 +13,17 @@
                     <i class="icon-arrow-up"></i>
                     <span>{{i18n 'wallet.app.buttons.send'}}</span>
                 </a>
-            </li>            
-            
+            </li>
+
             <li class="block-info dapp-flex-item  {{#if TemplateVar.get 'syncing'}}syncing{{/if}}">
                 {{#unless isMistMode}}
 
-                    {{#if $eq ($.Session.get "network") "test"}}
-                        <span class="private-chain" title="{{i18n 'wallet.app.texts.testnetExplain'}}">TEST-NET</span> &nbsp;&nbsp; 
-                    {{/if}}
-                    {{#if $eq ($.Session.get "network") "private"}}
-                        <span class="private-chain" title="{{i18n 'wallet.app.texts.testnetExplain'}}">PRIVATE-NET</span> &nbsp;&nbsp; 
-                    {{/if}}
+                    <!-- {{#if $eq ($.Session.get "network") "test"}}
+                        <span class="private-chain" title="{{i18n 'wallet.app.texts.testnetExplain'}}">TEST-NET</span> &nbsp;&nbsp;
+                    {{/if}} -->
+                    <!-- {{#if $eq ($.Session.get "network") "private"}} -->
+                        <!-- <span class="private-chain" title="{{i18n 'wallet.app.texts.testnetExplain'}}">PRIVATE-NET</span> &nbsp;&nbsp; -->
+                    <!-- {{/if}} -->
 
                     {{#with TemplateVar.get "syncing"}}
                         <span class="text">
@@ -41,15 +42,15 @@
                     {{/with}}
                 {{/unless}}
             </li>
-            <li>
+            <!-- <li>
                 <a href="{{pathFor route='contracts'}}" class="{{isActiveRoute regex='contracts'}}">
                     <i class="icon-docs"></i>
                     <span>{{i18n 'wallet.app.buttons.contracts'}}</span>
                 </a>
-            </li>
+            </li> -->
             <li class="wallet-balance">
-                <h3>{{i18n 'wallet.app.texts.balance'}}</h3>
-                {{> elements_balance balance=totalBalance changeUnit=true}}
+                <h3 style="color:#fff;">{{i18n 'wallet.app.texts.balance'}}</h3>
+                {{> elements_balance balance=totalBalance changeUnit=false}}
             </li>
 
             </ul>

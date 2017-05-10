@@ -1,6 +1,7 @@
 <template name="elements_balance">
     <span class="account-balance">
-        {{convertedBalance}}
+        <!-- {{convertedBalance}} -->
+        <span style="color:green;font-size:16px;">{{convertedBalance}}</span>
 
         {{! getBalance is necessary to make the count up/down animation work}}
         {{getBalance}}
@@ -8,8 +9,9 @@
         {{#if changeUnit}}
             {{> elements_selectableUnit}}
         {{else}}
-            <span>
-                {{unit}}
+            <span style="font-size:14px;">
+                <!-- {{unit}} -->
+                Daxx
             </span>
         {{/if}}
     </span>
