@@ -3,8 +3,7 @@
 
         <div class="dapp-container accounts-page">
 
-            <div class="dapp-sticky-bar dapp-container">
-
+            <!-- <div class="dapp-sticky-bar dapp-container">
                 {{#with isVulnerable}}
                     {{#if vulnerabilities.txorigin}}
                         {{> elements_vulnerabilities_txorigin}}
@@ -13,23 +12,22 @@
                     {{> dapp_identicon identity=address}}
                     <h1>
                         <span class="edit-name">{{name}}</span> <i class="edit-icon icon-pencil"></i>
-
                         {{#if $or owners jsonInterface}}
                             <button class="dapp-icon-button delete icon-trash"></button>
                         {{/if}}
                     </h1>
                     {{> elements_balance balance=balance changeUnit=true showAllDecimals=true}}
                 {{/with}}
-            </div>
+            </div> -->
 
             <div class="accounts-page-summary">
-                {{> dapp_identicon identity=address}}
-                <header>
+                <!-- {{> dapp_identicon identity=address}} -->
+                <!-- <header> -->
                     <h1>
                         <span class="edit-name">{{name}}</span> <i class="edit-icon icon-pencil"></i>
-                        {{#if $or owners jsonInterface}}
+                        <!-- {{#if $or owners jsonInterface}}
                             <button class="dapp-icon-button delete icon-trash"></button>
-                        {{/if}}
+                        {{/if}} -->
                     </h1>
                     <h2 class="copyable-address">{{walletIcon}}
                         <!-- <input type="text" value="{{toChecksumAddress address}}" readonly class=""> -->
@@ -37,10 +35,10 @@
                     </h2>
                     <div class="clear"></div>
                     {{> elements_balance balance=balance changeUnit=false showAllDecimals=true}}
-                </header>
+                <!-- </header> -->
 
 
-                {{#with tokens}}
+                <!-- {{#with tokens}}
                     <table class="token-list dapp-zebra">
                         <tbody>
                             {{#each this}}
@@ -58,18 +56,18 @@
                             {{/each}}
                         </tbody>
                     </table>
-                {{/with}}
+                {{/with}} -->
 
-                {{#with isVulnerable}}
+                <!-- {{#with isVulnerable}}
                     {{#if vulnerabilities.txorigin}}
                         {{> elements_vulnerabilities_txorigin}}
                     {{/if}}
-                {{/with}}
+                {{/with}} -->
 
-                {{#if owners}}
+                <!-- {{#if owners}} -->
                     <!-- Wallet infos -->
 
-                    <div class="row clear wallet-info">
+                    <!-- <div class="row clear wallet-info">
                         {{#if showDailyLimit}}
                             <div class="col col-4 mobile-full">
                                 {{#if $gte version 1}}
@@ -94,26 +92,26 @@
                                 </span>
                             {{/each}}
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Account infos -->
-                    <div class="account-info">
+                    <!-- <div class="account-info">
                         <h3>{{i18n "wallet.app.texts.note"}}</h3>
                         <p>{{i18n "wallet.accounts.walletNote"}}</p>
                     </div>
-                {{/if}}
+                {{/if}} -->
 
-                {{#if $eq type "account"}}
+                <!-- {{#if $eq type "account"}} -->
                     <!-- Account infos -->
-                    <div class="account-info">
+                    <!-- <div class="account-info">
                         <h3>{{i18n "wallet.app.texts.note"}}</h3>
                         <p>{{{i18n "wallet.accounts.accountNote"}}}</p>
-                    </div>
-                {{/if}}
+                    </div> -->
+                <!-- {{/if}} -->
 
             </div>
 
-            {{#unless isVulnerable}}
+            <!-- {{#unless isVulnerable}}
             <aside class="dapp-actionbar">
                 <nav>
                     <ul>
@@ -123,7 +121,6 @@
                                 {{i18n "wallet.accounts.buttons.deposit"}}
                             </a>
                         </li>
-
                         {{#if $eq ($.Session.get "network") "main"}}
                             <li>
                                 <a href="https://shapeshift.io/shifty.html?destination={{address}}&amp;output=ETH&amp;apiKey=ef8312d8c9b9dda64fb852e8683eac6c33123f8743ff11383fb3bab29a364c01c27343fced4e628db8d5d66d763565763f8699c0fc903ec23db31cb908a944c8" target="_popup" data-popup-width="" data-popup-height="">
@@ -132,7 +129,6 @@
                                 </a>
                             </li>
                         {{/if}}
-
                         {{#if $eq ($.Session.get "network") "main"}}
                             <li>
                                 <button class="deposit-using-coinbase">
@@ -141,7 +137,6 @@
                                 </button>
                             </li>
                         {{/if}}
-
                         <li>
                             <button class="copy-to-clipboard-button">
                                 <i class="icon-docs"></i>
@@ -162,15 +157,13 @@
                                 </button>
                             </li>
                         {{/if}}
-
                     </ul>
                 </nav>
             </aside>
             {{/unless}}
-
             {{#if jsonInterface}}
                 {{> elements_executeContract address=address jsonInterface=jsonInterface}}
-            {{/if}}
+            {{/if}} -->
 
 
             <div class="accounts-transactions">
@@ -187,23 +180,20 @@
                     {{> elements_transactions_table ids=transactions account=_id}}
                 {{/if}}
 
-                {{#with customContract}}
+                <!-- {{#with customContract}}
                     <h2>{{i18n 'wallet.events.latest'}}</h2>
                     <br>
-
                     <div>
                         <input type="checkbox" id="watch-events-checkbox" class="toggle-watch-events" checked="{{TemplateVar.get 'watchEvents'}}">
                         <label for="watch-events-checkbox">{{i18n "wallet.contracts.buttons.watchContractEvents"}}</label>
                     </div>
-
                     {{#if (TemplateVar.get "watchEvents")}}
                         <div class="watch-events-spinner">
                             {{> spinner}}
                         </div>
                     {{/if}}
-
                     {{> elements_event_table ids=contractEvents}}
-                {{/with}}
+                {{/with}} -->
             </div>
         </div>
     {{/with}}

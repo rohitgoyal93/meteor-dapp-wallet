@@ -119,8 +119,6 @@ var estimationCallback = function(e, res){
 Template['views_send'].onCreated(function(){
     var template = this;
 
-    console.log("web3",web3);
-
     // SET THE DEFAULT VARIABLES
     TemplateVar.set('amount', '0');
     TemplateVar.set('estimatedGas', 300000);
@@ -137,8 +135,6 @@ Template['views_send'].onCreated(function(){
     template.autorun(function(c){
 
         var address = TemplateVar.getFrom('.dapp-select-account.send-from', 'value');
-
-        console.log("address" , address);
 
         // console.log("c is",c);
 
@@ -312,18 +308,13 @@ Template['views_send'].helpers({
     @method (total)
     */
     'total': function(ether){
-        console.log("total called",ether);
         var selectedAccount = Helpers.getAccountByAddress(TemplateVar.getFrom('.dapp-select-account.send-from', 'value'));
-        console.log(selectedAccount);
         var amount = TemplateVar.get('amount');
-        console.log("amount",amount);
         if(!_.isFinite(amount))
             return '0';
 
         // ether
         var gasInWei = TemplateVar.getFrom('.dapp-select-gas-price', 'gasInWei') || '0';
-
-        console.log(TemplateVar.get('selectedToken'));
 
         if (TemplateVar.get('selectedToken') === 'ether') {
 
@@ -333,7 +324,6 @@ Template['views_send'].helpers({
         } else {
             amount = new BigNumber(gasInWei, 10);
         }
-        console.log("final",amount.toString(10));
         return amount;
     },
     /**

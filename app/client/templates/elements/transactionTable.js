@@ -1,20 +1,17 @@
 /**
 Template Controllers
-
 @module Templates
 */
 
 
 /**
 The transaction row template
-
 @class [template] elements_transactions_table
 @constructor
 */
 
 /**
 Block required until a transaction is confirmed.
-
 @property blocksForConfirmation
 @type Number
 */
@@ -22,7 +19,6 @@ var blocksForConfirmation = ethereumConfig.requiredConfirmations;
 
 /**
 The default limit, of none is given.
-
 @property defaultLimit
 @type Number
 */
@@ -39,17 +35,26 @@ Template['elements_transactions_table'].onCreated(function(){
 Template['elements_transactions_table'].helpers({
     /**
     Changes the limit of the given cursor
-
     @method (items)
     @return {Object} The items cursor
     */
+
+    'log' : function(){
+      console.log("transaction table",this);
+    },
+
     'items': function(){
+
         var template = Template.instance(),
             items = [],
             searchQuery = TemplateVar.get('search'),
             limit = TemplateVar.get('limit'),
             collection = window[this.collection] || Transactions,
             selector = this.ids ? {_id: {$in: this.ids}} : {};
+
+            // console.log("search ")
+            console.log("windows",window[this.collection]);
+            console.log("Transactions",Transactions);
 
         // if search
         if(searchQuery) {
@@ -75,17 +80,22 @@ Template['elements_transactions_table'].helpers({
 
                 return false;
             });
+            console.log("items called with sq");
             items = items.slice(0, defaultLimit * 4);
             return items;
 
         } else {
+          console.log("items called");
+          console.log(collection);
+          console.log("selection is", selector);
+          console.log("limit is",limit);
             template._properties.cursor = collection.find(selector, {sort: {timestamp: -1, blockNumber: -1}, limit: limit});
+            console.log(template._properties.cursor.fetch());
             return template._properties.cursor.fetch();
         }
     },
     /**
     Check if there are more transactions to load. When searching don't show the show more button.
-
     @method (hasMore)
     @return {Boolean}
     */
@@ -115,7 +125,6 @@ Template['elements_transactions_table'].events({
 
 /**
 The transaction row template
-
 @class [template] elements_transactions_row
 @constructor
 */
@@ -125,7 +134,6 @@ Template['elements_transactions_row'].helpers({
     /**
     Checks if, from the perspective of the selected account
     the transaction was incoming or outgoing.
-
     @method (incomingTx)
     @param {String} account     The _id of the current account
     */
@@ -136,14 +144,13 @@ Template['elements_transactions_row'].helpers({
     },
     /**
     Returns the correct text for this transaction
-
     @method (transactionType)
     @return {String}
     */
     'transactionType': function(){
         var to = Helpers.getAccountByAddress(this.to),
             from = Helpers.getAccountByAddress(this.from),
-            initiator = Helpers.getAccountByAddress(this.initiator), 
+            initiator = Helpers.getAccountByAddress(this.initiator),
             sendData = this.data;
 
         if(from)
@@ -154,7 +161,7 @@ Template['elements_transactions_row'].helpers({
 
         if(this.type === 'pendingConfirmation')
             return new Spacebars.SafeString(TAPi18n.__('wallet.transactions.types.pendingConfirmations', {initiator: initiator, from: from}));
-        else if(this.outOfGas) 
+        else if(this.outOfGas)
             return TAPi18n.__('wallet.transactions.types.outOfGas');
         else if(this.tokenId && Tokens.findOne(this.tokenId))
             return TAPi18n.__('wallet.transactions.types.tokenTransfer', {token: Tokens.findOne(this.tokenId).name});
@@ -171,7 +178,6 @@ Template['elements_transactions_row'].helpers({
     },
     /**
     Returns the from now time, if less than 23 hours
-
     @method (fromNowTime)
     @return {String}
     */
@@ -183,13 +189,11 @@ Template['elements_transactions_row'].helpers({
     },
     /**
     Returns the confirmations
-
     @method (totalConfirmations)
     */
     'totalConfirmations': blocksForConfirmation,
     /**
     Checks whether the transaction is confirmed ot not.
-
     @method (unConfirmed)
     */
     'unConfirmed': function() {
@@ -210,7 +214,6 @@ Template['elements_transactions_row'].helpers({
     },
     /**
     Return the number of owner confirmations
-
     @method (ownerConfirmationCount)
     */
     'ownerConfirmationCount': function(){
@@ -221,7 +224,6 @@ Template['elements_transactions_row'].helpers({
     },
     /**
     Get the owners of the current pending transactions wallet.
-
     @method (owners)
     */
     'owners': function(){
@@ -230,7 +232,6 @@ Template['elements_transactions_row'].helpers({
     },
     /**
     Check if the current owner is confirmed
-
     @method (ownerIsConfirmed)
     */
     'ownerIsConfirmed': function(){
@@ -239,7 +240,6 @@ Template['elements_transactions_row'].helpers({
     },
     /**
     Check if the current owner has already approved the transaction
-
     @method (approved)
     */
     'approved': function(){
@@ -250,7 +250,6 @@ Template['elements_transactions_row'].helpers({
     },
     /**
     Check if the current owner has not yetr approved the transaction
-
     @method (notApproved)
     */
     'notApproved': function(){
@@ -258,7 +257,6 @@ Template['elements_transactions_row'].helpers({
     },
     /**
     Check if there is any owner that needs to still approve
-
     @method (multipleOwnersApproved)
     */
     'multipleOwnersApproved': function(e){
@@ -267,7 +265,6 @@ Template['elements_transactions_row'].helpers({
     },
     /**
     Token value
-
     @method (tokenValue)
     */
     'tokenValue': function() {
@@ -281,7 +278,6 @@ Template['elements_transactions_row'].helpers({
 Template['elements_transactions_row'].events({
     /**
     Open transaction details on click of the <tr>
-
     @event click tr
     */
     'click tr:not(.pending)': function(e) {
@@ -299,7 +295,6 @@ Template['elements_transactions_row'].events({
     },
     /**
     Revoke or Approve a pending transactions
-
     @event click button.approve, click button.revoke
     */
     'click button.approve, click button.revoke': function(e){
@@ -313,7 +308,7 @@ Template['elements_transactions_row'].events({
                     ? 'confirm'
                     : 'revoke';
 
-            
+
 
             // sending the confirm tx
             var sendConfirmation = function(owner){
@@ -324,7 +319,7 @@ Template['elements_transactions_row'].events({
                 var callback = function(error, hash){
                     if(!error) {
                         console.log(type +' confirmation tx hash: '+ hash);
-                        
+
                         PendingConfirmations.update(_this._id, {$set: {
                             sending: owner
                         }});
@@ -375,4 +370,3 @@ Template['elements_transactions_row'].events({
         }
     }
 });
-

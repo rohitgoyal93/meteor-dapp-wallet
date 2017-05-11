@@ -1,8 +1,8 @@
 <template name="elements_transactions_table">
     <br>
-    {{#unless $eq collection "PendingConfirmations"}}
+    <!-- {{#unless $eq collection "PendingConfirmations"}}
         <input type="text" class="filter-transactions" placeholder="{{i18n 'wallet.transactions.filter'}}">
-    {{/unless}}
+    {{/unless}} -->
     <table class="dapp-zebra transactions">
         <tbody>
             {{#each items}}
@@ -42,10 +42,10 @@
         </td>
         <td class="account-name">
             <h2>{{transactionType}}</h2>
-            
+
             <p>
                 {{> elements_account_link address=from}}
-                <span class="arrow">→</span> 
+                <span class="arrow">→</span>
                 {{#if to}}
                     {{> elements_account_link address=to}}
                 {{else}}
@@ -109,7 +109,7 @@
                 <td colspan='2' class="button">
                     {{> spinner}}
                 </td>
-            {{else}}           
+            {{else}}
                 {{#if multipleOwnersApproved}}
                     {{#if approved}}
                     <td class="button">
@@ -139,13 +139,12 @@
                         </button>
                     </td>
                     {{else}}
-                    <td class="info" colspan="2"> 
+                    <td class="info" colspan="2">
                         <i class="icon-info"></i> {{i18n "wallet.transactions.noOwnerAccount"}}
                     </td>
                     {{/if}}
-                {{/if}}                                   
+                {{/if}}
             {{/if}}
         {{/if}}
     </tr>
 </template>
-
