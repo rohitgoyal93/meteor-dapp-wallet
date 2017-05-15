@@ -36,9 +36,17 @@
                     </h2>
                     <div class="clear"></div>
 
-                                       
+                     <div align="center">
+                        <span class="qr-code-block">  {{> QRCode text=address size="200px" }} </span>
+                     </div>
 
-                  <div align="center">  {{> elements_balance balance=balance changeUnit=false showAllDecimals=true}} </div>
+                     <div align="center">
+                       <button class="copy-to-clipboard-button theme-btn">
+                           {{i18n "wallet.accounts.buttons.copyAddress"}}
+                       </button>
+                     </div>
+
+                  <div class="MT10" align="center">  {{> elements_balance balance=balance changeUnit=false showAllDecimals=true}} </div>
                 <!-- </header> -->
 
 
