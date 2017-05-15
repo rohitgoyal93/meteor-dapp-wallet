@@ -23,18 +23,22 @@
             <div class="accounts-page-summary">
                 <!-- {{> dapp_identicon identity=address}} -->
                 <!-- <header> -->
-                    <h1>
+                    <h1 align="center">
                         <span class="edit-name">{{name}}</span> <i class="edit-icon icon-pencil"></i>
                         <!-- {{#if $or owners jsonInterface}}
                             <button class="dapp-icon-button delete icon-trash"></button>
                         {{/if}} -->
                     </h1>
-                    <h2 class="copyable-address">{{walletIcon}}
+                    <h2 align="center" class="copyable-address">
+                      <!-- {{walletIcon}} -->
                         <!-- <input type="text" value="{{toChecksumAddress address}}" readonly class=""> -->
                         <span>{{toChecksumAddress address}}</span>
                     </h2>
                     <div class="clear"></div>
-                    {{> elements_balance balance=balance changeUnit=false showAllDecimals=true}}
+
+                                       
+
+                  <div align="center">  {{> elements_balance balance=balance changeUnit=false showAllDecimals=true}} </div>
                 <!-- </header> -->
 
 
@@ -169,13 +173,13 @@
             <div class="accounts-transactions">
 
                 {{#if pendingConfirmations}}
-                    <h2>{{i18n 'wallet.transactions.pendingConfirmations'}}</h2>
+                    <h2 style="margin-bottom:0;box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);">{{i18n 'wallet.transactions.pendingConfirmations'}}</h2>
 
                     {{> elements_transactions_table collection="PendingConfirmations" ids=pendingConfirmations account=_id}}
                 {{/if}}
 
                 {{#if transactions}}
-                    <h2>{{i18n 'wallet.transactions.latest'}}</h2>
+                    <h2 style="margin-bottom:0;box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);">{{i18n 'wallet.transactions.latest'}}</h2>
 
                     {{> elements_transactions_table ids=transactions account=_id}}
                 {{/if}}

@@ -1,10 +1,22 @@
 <template name="elements_transactions_table">
-    <br>
+
     <!-- {{#unless $eq collection "PendingConfirmations"}}
         <input type="text" class="filter-transactions" placeholder="{{i18n 'wallet.transactions.filter'}}">
     {{/unless}} -->
-    <table class="dapp-zebra transactions">
+
+                <div class="wallet-box-list">
+                  <table class="table table-bordered">
+    <!-- <table class="dapp-zebra transactions"> -->
         <tbody>
+          <tr>
+             <th>Date</th>
+             <th>From</th>
+             <th>To</th>
+             <th>Status</th>
+             <th>Balance</th>
+             <th>Details</th>
+          </tr>
+
             {{#each items}}
                 {{> elements_transactions_row}}
             {{else}}
@@ -25,33 +37,43 @@
             {{/if}}
         </tbody>
     </table>
+  </div>
 </template>
 
 <template name="elements_transactions_row">
+
+
     <tr class="{{#if $eq unConfirmed.confirmations 0}}unconfirmed{{/if}} {{#if disabled}}disabled{{/if}}  {{#if $eq ../collection "PendingConfirmations"}}pending{{/if}}" data-operation="{{operation}}" data-transaction-hash="{{transactionHash}}" data-block-hash="{{blockHash}}">
-        {{#unless $eq ../collection "PendingConfirmations"}}
+        <!-- {{#unless $eq ../collection "PendingConfirmations"}}
             {{#with unConfirmed}}
                 <div class="dapp-progress">
                     <div class="dapp-bar" style="width: {{percent}}%;"></div>
                 </div>
             {{/with}}
-        {{/unless}}
-        <td class="time simptip-position-right simptip-movable" data-tooltip="{{formatTime timestamp 'LLLL'}}">
-            <h2>{{formatTime timestamp "MMM"}}</h2>
-            <p>{{formatTime timestamp "D"}}</p>
+        {{/unless}} -->
+        <!-- <td class="time simptip-position-right simptip-movable" data-tooltip="{{formatTime timestamp 'LLLL'}}"> -->
+          <td>
+            <!-- <h2>{{formatTime timestamp "MMM"}}</h2>
+            <p>{{formatTime timestamp "D"}}</p> -->
+            {{formatTime timestamp "MMM"}} {{formatTime timestamp "D"}}
         </td>
-        <td class="account-name">
-            <h2>{{transactionType}}</h2>
 
-            <p>
-                {{> elements_account_link address=from}}
-                <span class="arrow">→</span>
+        <td>
+             {{> elements_account_link address=from}}
+        </td>
+
+
+        <td>
+            <!-- <h2>{{transactionType}}</h2> -->
+
+
+                <!-- {{> elements_account_link address=from}} -->
+                <!-- <span class="arrow">→</span> -->
                 {{#if to}}
                     {{> elements_account_link address=to}}
                 {{else}}
                     {{> elements_createdContractAt contractAddress=contractAddress deployedData=deployedData}}
                 {{/if}}
-            </p>
 
             {{#if ownerConfirmationCount}}
                 <div class="owner-confirmations">
@@ -65,6 +87,8 @@
                 </div>
             {{/if}}
         </td>
+
+
         <td class="info">
             {{#with unConfirmed}}
                 {{confirmations}} {{i18n "commonWords.of"}} {{totalConfirmations}} {{i18n "wallet.transactions.confirmations"}}
@@ -72,6 +96,7 @@
                 {{fromNowTime}}
             {{/with}}
         </td>
+
         {{#if outOfGas}}
             <td class="transaction-amount minus">
                 -{{dapp_formatBalance fee '0,0.00[000] UNIT'}}
@@ -88,6 +113,7 @@
                         {{formatTransactionBalance value exchangeRates}}
                     {{/if}}
                 </td>
+
                 <td>
                     <i class="icon-arrow-left plus"></i>
                 </td>
@@ -96,14 +122,19 @@
                     {{#if tokenId}}
                         -{{tokenValue}}
                     {{else}}
-                        -{{formatTransactionBalance value exchangeRates}}
+                          <!-- -{{formatTransactionBalance value exchangeRates}} -->
+                        <span style="color:green;">  -{{getDaxxString value "0,0.00[0000000000000000]"}} </span>
                     {{/if}}
                 </td>
                 <td>
-                    <i class="icon-arrow-right minus"></i>
+                    <!-- <i class="icon-arrow-right minus"></i> -->
+                    <i style="color:#15c;font-style:normal;">Detail</i>
                 </td>
             {{/if}}
         {{/if}}
+
+
+
         {{#if $eq ../collection "PendingConfirmations"}}
             {{#if sending}}
                 <td colspan='2' class="button">
