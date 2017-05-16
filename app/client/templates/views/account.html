@@ -32,7 +32,11 @@
                     <h2 align="center" class="copyable-address">
                       <!-- {{walletIcon}} -->
                         <!-- <input type="text" value="{{toChecksumAddress address}}" readonly class=""> -->
-                        <span>{{toChecksumAddress address}}</span>
+                        <div class="pos-relative">
+                          <input readonly id="address" value="{{toChecksumAddress address}}"/>
+                          <span class="tick" style="color:green;font-size:25px;">&#x2714;</span>
+                        </div>
+
                     </h2>
                     <div class="clear"></div>
 

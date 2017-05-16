@@ -183,55 +183,62 @@ Template['views_account'].helpers({
 });
 
 var accountClipboardEventHandler = function(e){
-    if (Session.get('tmpAllowCopy') === true) {
-        Session.set('tmpAllowCopy', false);
-        return true;
-    }
-    else {
-        e.preventDefault();
-    }
+    // if (Session.get('tmpAllowCopy') === true) {
+    //     Session.set('tmpAllowCopy', false);
+    //     return true;
+    // }
+    // else {
+    //     e.preventDefault();
+    // }
+
+     copyAddress();
 
     function copyAddress(){
-        var copyTextarea = document.querySelector('.copyable-address span');
-        var selection = window.getSelection();
-        var range = document.createRange();
-        range.selectNodeContents(copyTextarea);
-        selection.removeAllRanges();
-        selection.addRange(range);
+        var copyTextarea = document.querySelector('.copyable-address input#address');
+        console.log(copyTextarea);
+        copyTextarea.select();
+        document.execCommand("copy");
+        document.querySelector('.tick').style.display = "inline-block";      
 
-        try {
-            document.execCommand('copy');
+        // var selection = window.getSelection();
+        // var range = document.createRange();
+        // range.selectNodeContents(copyTextarea);
+        // selection.removeAllRanges();
+        // selection.addRange(range);
 
-            GlobalNotification.info({
-               content: 'i18n:wallet.accounts.addressCopiedToClipboard',
-               duration: 3
-            });
-        } catch (err) {
-            GlobalNotification.error({
-                content: 'i18n:wallet.accounts.addressNotCopiedToClipboard',
-                closeable: false,
-                duration: 3
-            });
-        }
-        selection.removeAllRanges();
+        // try {
+        //     document.execCommand('copy');
+        //
+        //     GlobalNotification.info({
+        //        content: 'i18n:wallet.accounts.addressCopiedToClipboard',
+        //        duration: 3
+        //     });
+        // } catch (err) {
+        //     GlobalNotification.error({
+        //         content: 'i18n:wallet.accounts.addressNotCopiedToClipboard',
+        //         closeable: false,
+        //         duration: 3
+        //     });
+        // }
+        // selection.removeAllRanges();
     }
 
-    if (Helpers.isOnMainNetwork()) {
-        Session.set('tmpAllowCopy', true);
-        copyAddress();
-    }
-    else {
-        EthElements.Modal.question({
-            text: new Spacebars.SafeString(TAPi18n.__('wallet.accounts.modal.copyAddressWarning')),
-            ok: function(){
-                Session.set('tmpAllowCopy', true);
-                copyAddress();
-            },
-            cancel: true,
-            modalQuestionOkButtonText: TAPi18n.__('wallet.accounts.modal.buttonOk'),
-            modalQuestionCancelButtonText: TAPi18n.__('wallet.accounts.modal.buttonCancel')
-        });
-    }
+    // if (Helpers.isOnMainNetwork()) {
+    //     Session.set('tmpAllowCopy', true);
+    //     copyAddress();
+    // }
+    // else {
+    //     EthElements.Modal.question({
+    //         text: new Spacebars.SafeString(TAPi18n.__('wallet.accounts.modal.copyAddressWarning')),
+    //         ok: function(){
+    //             Session.set('tmpAllowCopy', true);
+    //             copyAddress();
+    //         },
+    //         cancel: true,
+    //         modalQuestionOkButtonText: TAPi18n.__('wallet.accounts.modal.buttonOk'),
+    //         modalQuestionCancelButtonText: TAPi18n.__('wallet.accounts.modal.buttonCancel')
+    //     });
+    // }
 };
 
 Template['views_account'].events({

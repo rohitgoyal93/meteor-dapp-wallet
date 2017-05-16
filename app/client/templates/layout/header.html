@@ -6,19 +6,25 @@
             <img src="daxxcoin.png"/>
        </div>
 
+       <ul class="pull-left menu-list">
+         <li>
+             <a href="{{pathFor route='dashboard'}}" class="{{isActiveRoute regex='dashboard'}}">
+                 <span class="icon-account"></span>
+                 <!-- <i class="icon-wallet"></i> -->
+                 <!-- <span>{{i18n 'wallet.app.buttons.wallet'}}</span> -->
+                 <span>Overview</span>
+             </a>
+         </li>
+         <li>
+             <a href="{{goToSend}}" class="{{isActiveRoute regex='send'}}">
+                <span class="icon-send"></span>
+                 <!-- <i class="icon-arrow-up"></i> -->
+                 <span>{{i18n 'wallet.app.buttons.send'}}</span>
+             </a>
+         </li>
+      </ul>
+
         <ul class="pull-right">
-            <li>
-                <a href="{{pathFor route='dashboard'}}" class="{{isActiveRoute regex='dashboard'}}">
-                    <i class="icon-wallet"></i>
-                    <span>{{i18n 'wallet.app.buttons.wallet'}}</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{goToSend}}" class="{{isActiveRoute regex='send'}}">
-                    <i class="icon-arrow-up"></i>
-                    <span>{{i18n 'wallet.app.buttons.send'}}</span>
-                </a>
-            </li>
 
             <!-- <li>
                 <a href="{{goToReceive}}" class="{{isActiveRoute regex='receive'}}">
@@ -62,7 +68,7 @@
                 </a>
             </li> -->
             <li class="wallet-balance">
-                <h3 style="color:#fff;">{{i18n 'wallet.app.texts.balance'}}</h3>
+                <h3 style="color:#fff;margin-top:10px;">{{i18n 'wallet.app.texts.balance'}}</h3>
                 {{> elements_balance balance=totalBalance changeUnit=false}}
             </li>
 

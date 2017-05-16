@@ -85,20 +85,24 @@
             {{/if}} -->
 
         {{else}}
-            <div class="col col-5 mobile-full ">
+            <div class="col col-12 mobile-full ">
                 <br>
                 {{#if isMist}}
-                    <button class="wallet-box create account">
+                    <!-- <button class="wallet-box create account">
                         <div class="account-pattern">
                             +
                         </div>
                         <h3>{{i18n "wallet.app.buttons.addAccount"}}</h3>
+                    </button> -->
+
+                    <button class="create account btn-red ">
+                        {{i18n "wallet.app.buttons.addAccount"}}
                     </button>
                 {{/if}}
             </div>
-            <div class="col col-5 mobile-full ">
-                <h3>{{i18n "wallet.app.texts.noAccounts.title"}}</h3>
-                <p>{{i18n "wallet.app.texts.noAccounts.text"}}</p>
+            <div class="col col-12 mobile-full" align="center">
+                <h3 class="no-record-head"> <i class="icon-wallet"></i> &nbsp; You have no Accounts yet</h3>
+                <p>Please click on Add Account button to create a new account. Please make sure to enter a strong password.</p>
             </div>
         {{/if}}
 
