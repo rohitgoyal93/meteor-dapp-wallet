@@ -1,7 +1,10 @@
 <template name="views_dashboard">
     <div class="dapp-container">
 
-        <h1>{{{i18n "wallet.accounts.title"}}}</h1>
+        <h1>
+          <!--{{{i18n "wallet.accounts.title"}}}-->
+          Account Details
+        </h1>
 
         {{#if pendingConfirmations}}
             <h2>{{i18n 'wallet.transactions.pendingConfirmations'}}</h2>
@@ -13,7 +16,10 @@
         {{#if hasAccounts}}
 
             <h2 class="clearfix">
-              <div class="MT7" style="float:left;">{{i18n "wallet.accounts.accountsTitle"}} </div>
+              <div class="MT7" style="float:left;">
+                <!-- {{i18n "wallet.accounts.accountsTitle"}} -->
+                User Wallet
+               </div>
               <button style="float:right;" class="wallet-box create account btn-red">
                   Create New Wallet
               </button>
@@ -31,7 +37,7 @@
                     <th>Name</th>
                     <th>Wallet Balance</th>
                     <th>Wallet Address</th>
-                    <th>Copy Link</th>
+                    <th>Action</th>
                   </tr>
                 {{#each accounts}}
                     <tr>
