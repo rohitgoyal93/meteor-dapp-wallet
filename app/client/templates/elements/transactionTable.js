@@ -80,17 +80,17 @@ Template['elements_transactions_table'].helpers({
 
                 return false;
             });
-            console.log("items called with sq");
+            // console.log("items called with sq");
             items = items.slice(0, defaultLimit * 4);
             return items;
 
         } else {
-          console.log("items called");
-          console.log(collection);
-          console.log("selection is", selector);
-          console.log("limit is",limit);
+          // console.log("items called");
+          // console.log(collection);
+          // console.log("selection is", selector);
+          // console.log("limit is",limit);
             template._properties.cursor = collection.find(selector, {sort: {timestamp: -1, blockNumber: -1}, limit: limit});
-            console.log(template._properties.cursor.fetch());
+            // console.log(template._properties.cursor.fetch());
             return template._properties.cursor.fetch();
         }
     },
