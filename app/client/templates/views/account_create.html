@@ -1,7 +1,7 @@
 <template name="views_account_create">
         <!-- we use a form, which posts into the "dapp-form-helper-iframe" iframe, so that the browser stores inout fields for native autocpmplete -->
     <form class="container new-account" action="about:blank" target="dapp-form-helper-iframe" autocomplete="on">
-            
+
         <h1>{{{i18n 'wallet.newWallet.title'}}}</h1>
 
         <input type="text" name="accountName" value="{{name}}" placeholder="{{i18n 'wallet.newWallet.accountName'}}" autofocus="true">
@@ -12,7 +12,7 @@
 
 
         <h2>{{i18n 'wallet.newWallet.accountType.title'}}</h2>
-        
+
         <div class="row clear">
             <label>
                 <input type="radio" name="accountType" value="simple" {{simpleCheck}}>
@@ -42,7 +42,7 @@
                     <h4>{{i18n 'wallet.newWallet.accountType.multisig.accountOwnersTitle'}}</h4>
 
                     {{> dapp_addressInput placeholder=i18nOwnerAddress class="owners" value=selectedOwner disabled=true}}
-                    
+
                     {{#each signees}}
                         {{> dapp_addressInput placeholder=i18nOwnerAddress class="owners" value=(toChecksumAddress this)}}
                     {{/each}}
