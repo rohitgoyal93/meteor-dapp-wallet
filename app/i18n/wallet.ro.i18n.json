@@ -4,7 +4,7 @@
             "high": "Tranzactie mai rapida",
             "low": "Tranzactie mai ieftina"
         },
-        "checksumAlert":"This address looks valid, but it doesn't have some security features that will protect you against typos, so double check you have the right one. If provided, check if the security icon matches.",
+        "checksumAlert": "This address looks valid, but it doesn't have some security features that will protect you against typos, so double check you have the right one. If provided, check if the security icon matches.",
         "identiconHelper": "This is a security icon, if there's any change on the address the resulting icon should be a completelly different one"
     },
     "wallet": {
@@ -41,7 +41,7 @@
             },
             "warnings": {
                 "txOriginVulnerabilityWallet": "Acest portofel contract de inteligent are cod de depășit și este subiectul unor atacuri de tip phishing.",
-                "txOriginVulnerabilityCallToAction":"Actualizați contractul acum și transferați toate fondurile pe unul nou.",
+                "txOriginVulnerabilityCallToAction": "Actualizați contractul acum și transferați toate fondurile pe unul nou.",
                 "txOriginVulnerabilityAccount": "Acest cont este un proprietar al unui contract de portofel vulnerabil și utilizând acest cont pe contractele rău intenționate pot pune în pericol fondurile portofele. Upgrade de portofel înainte de a face orice tranzacții cu acest cont.",
                 "txOriginVulnerabilityPopup": "Am gasit portofele vulnerabile! Asigurați-vă că pentru a implementa noi portofele și pentru a muta fonduri!",
                 "learnMore": "Aflați mai multe despre această vulnerabilitate"
@@ -70,6 +70,21 @@
             }
         },
         "accounts": {
+            "UserWallet": "User Wallet",
+            "CreateNewWallet": "Creați un nou portofel Google Wallet",
+            "Name": "Nume",
+            "WalletBalance": "Wallet Balance",
+            "WalletAddress": "Adresa Wallet",
+            "Action": "Acțiune",
+            "CreateWallet": "Creați Wallet",
+            "NoTransaction": "Nu aveți încă conturi",
+            "NoTransactionMsg": "Faceți clic pe butonul Adăugați un cont pentru a crea un cont nou. Asigurați-vă că introduceți o parolă puternică.",
+            "WalletTransfer": "Transferul portofelului",
+            "TransactionFee": "Taxă de tranzacție",
+            "Total": "Total",
+            "Date": "Data",
+            "Status": "stare",
+            "Balance": "Echilibru",
             "title": "<strong>Starea</strong> portofelului",
             "walletsTitle": "Portofele ce au la baza contracte",
             "accountsTitle": "Conturi",
@@ -85,7 +100,7 @@
             "requiredSignatures": "Semnaturi necesare",
             "owners": "Detinatori",
             "walletsDescription": "Acestea sunt contracte ce stocheaza si securizeaza ether. Ele pot avea mai multi detinatori si pot pastra intregul jurnal al tranzactiilor.",
-            "walletsDescriptionNotEnoughFunds": "Ai nevoie de cel putin 1 ether pentru a implementa contracte mai sofisticate. Portofelele sunt la baza niste contracte inteligente, ce pot fi controlate de mai multi detinatori si chiar se pot seta limite de retragere pentru o mai buna securitate.  Pentru a implementa un contract personalizat, mergi la sectiunea <em> Contracts </em>.",        
+            "walletsDescriptionNotEnoughFunds": "Ai nevoie de cel putin 1 ether pentru a implementa contracte mai sofisticate. Portofelele sunt la baza niste contracte inteligente, ce pot fi controlate de mai multi detinatori si chiar se pot seta limite de retragere pentru o mai buna securitate.  Pentru a implementa un contract personalizat, mergi la sectiunea <em> Contracts </em>.",
             "accountsDescription": "Conturile sunt chei securizate prin parola ce pot controla contractele. Conturile pot stoca ether dar nu pot lista jurnalul tranzactiilor.",
             "buttons": {
                 "deposit": "Depunere",
@@ -168,7 +183,7 @@
                 },
                 "outgoingTransaction": {
                     "title": "Plata trimisa",
-                    "text": "Ai trimis __amount__ de la __from__ catre __to__."    
+                    "text": "Ai trimis __amount__ de la __from__ catre __to__."
                 },
                 "pendingConfirmation": {
                     "title": "Confirmari necesare",
@@ -283,7 +298,7 @@
             }
         },
         "contracts": {
-            "contractTitle" : "Contracte",
+            "contractTitle": "Contracte",
             "deployNewContract": "Implementeaza un nou contract",
             "addCustomContract": "Urmareste un contract",
             "customContracts": "Contracte personalizateC",

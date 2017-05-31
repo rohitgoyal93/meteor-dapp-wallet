@@ -4,7 +4,7 @@
             "high": "より早く",
             "low": "より安く"
         },
-        "checksumAlert":"このアドレスは正しいように見えますが、アドレスの形式が間違っています。アドレスが正しいかを再確認し、必要ならば入力したアドレスによって表示されるセキュリティアイコンがあっているかを確かめて見て下さい。",
+        "checksumAlert": "このアドレスは正しいように見えますが、アドレスの形式が間違っています。アドレスが正しいかを再確認し、必要ならば入力したアドレスによって表示されるセキュリティアイコンがあっているかを確かめて見て下さい。",
         "identiconHelper": "これはセキュリティアイコンです。何かアドレス上の一文字でも変更があれば表示されるアイコンは全く異なるものになります。"
     },
     "wallet": {
@@ -70,6 +70,21 @@
             }
         },
         "accounts": {
+            "UserWallet": "ユーザーウォレット",
+            "CreateNewWallet": "新しいウォレットを作成する",
+            "Name": "名",
+            "WalletBalance": "ウォレットの残高",
+            "WalletAddress": "ウォレットアドレス",
+            "Action": "アクション",
+            "CreateWallet": "ウォレットを作成",
+            "NoTransaction": "アカウントがまだありません",
+            "NoTransactionMsg": "アカウントの追加ボタンをクリックして、新しいアカウントを作成してください。強力なパスワードを入力してください.",
+            "WalletTransfer": "ウォレット転送",
+            "TransactionFee": "取引手数料",
+            "Total": "合計",
+            "Date": "日付",
+            "Status": "状態",
+            "Balance": "バランス",
             "title": "<strong>アカウント</strong> オーバービュー",
             "walletsTitle": "ウォレットコントラクト",
             "accountsTitle": "アカウント",
@@ -126,7 +141,7 @@
             "amount": "量",
             "gasPrice": "ガスの値段",
             "perMillionGas": " PER MILLION GAS",
-            "gasUsed": "ガス使用量", 
+            "gasUsed": "ガス使用量",
             "feePaid": "支払い金額",
             "data": "データ送信",
             "deployedData": "配備されたデータ",
@@ -145,7 +160,7 @@
             },
             "error": {
                 "noDataDeployed": "アドレス内にデータがありません。",
-                "outOfGas": "トランザクションfrom __from__ to __to__ 正常に実行できませんでした"  
+                "outOfGas": "トランザクションfrom __from__ to __to__ 正常に実行できませんでした"
             },
             "types": {
                 "executeContract": "コントラクト実行",
@@ -168,7 +183,7 @@
                 },
                 "outgoingTransaction": {
                     "title": "支払い送信",
-                    "text": "You send __amount__ from __from__ to __to__."    
+                    "text": "You send __amount__ from __from__ to __to__."
                 },
                 "pendingConfirmation": {
                     "title": "確認して下さい",
@@ -283,7 +298,7 @@
             }
         },
         "contracts": {
-            "contractTitle" : "コントラクト",
+            "contractTitle": "コントラクト",
             "deployNewContract": "新しいコントラクトを配置",
             "addCustomContract": "コントラクトを見る",
             "customContracts": "コントラクトをカスタムする",

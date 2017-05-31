@@ -4,7 +4,7 @@
             "high": "Plus rapide",
             "low": "Moins cher"
         },
-        "checksumAlert":"Cette adresse semble valide mais ne contient pas certaines mesures de sécurité qui vous protègeraient des erreurs de frappe, veillez donc à vérifier deux fois que l'adresse soit bien la bonne. Si l'icône de sécuritée est fournie, vérifiez qu'elle corresponde bien.",
+        "checksumAlert": "Cette adresse semble valide mais ne contient pas certaines mesures de sécurité qui vous protègeraient des erreurs de frappe, veillez donc à vérifier deux fois que l'adresse soit bien la bonne. Si l'icône de sécuritée est fournie, vérifiez qu'elle corresponde bien.",
         "identiconHelper": "Ceci est une icône de sécurité, s'il y a le moindre changement sur l'adresse alors l'icône affichée devrait être complètement différente."
     },
     "wallet": {
@@ -41,7 +41,7 @@
             },
             "warnings": {
                 "txOriginVulnerabilityWallet": "Ce portefeuille de contrat à puce a le code obsolète et est soumis à des attaques de phishing. ",
-                "txOriginVulnerabilityCallToAction":"Améliorez votre contrat maintenant et transférer tous vos fonds à votre nouvelle.",
+                "txOriginVulnerabilityCallToAction": "Améliorez votre contrat maintenant et transférer tous vos fonds à votre nouvelle.",
                 "txOriginVulnerabilityAccount": "Ce compte est propriétaire d'un contrat de portefeuille vulnérable. L'utilisation de ce compte sur les contrats malveillants peut mettre en danger vos fonds de portefeuilles! <Strong> Améliorez votre portefeuille de contrat maintenant </ strong> et transférer tous vos fonds à votre nouvelle.",
                 "txOriginVulnerabilityPopup": "Nous avons trouvé des portefeuilles vulnérables! Assurez-vous de déployer de nouveaux portefeuilles et déplacer les fonds!",
                 "learnMore": "En savoir plus sur cette vulnérabilité"
@@ -70,6 +70,21 @@
             }
         },
         "accounts": {
+            "UserWallet": "Portefeuille utilisateur",
+            "CreateNewWallet": "Créer un nouveau portefeuille",
+            "Name": "prénom",
+            "WalletBalance": "Balance des portefeuilles",
+            "WalletAddress": "Adresse du portefeuille",
+            "Action": "action",
+            "CreateWallet": "Créer un portefeuille",
+            "NoTransaction": "Vous n'avez pas encore de compte",
+            "NoTransactionMsg": "Cliquez sur le bouton Ajouter un compte pour créer un nouveau compte. Assurez-vous d'entrer un mot de passe fort.",
+            "WalletTransfer": "Transfert de portefeuille",
+            "TransactionFee": "Frais de transaction",
+            "Total": "Total",
+            "Date": "Rendez-vous amoureux",
+            "Status": "Statut",
+            "Balance": "Équilibre",
             "title": "Aperçu des <strong>comptes</strong>",
             "walletsTitle": "Portefeuilles",
             "accountsTitle": "Comptes",
@@ -102,17 +117,17 @@
                 }
             }
         },
-        "events": {     
-            "eventInfoTitle": "Événement",      
-            "latest": "Derniers événements",      
-            "filter": "Filtrer les événements",      
-            "transactionHash": "Hash de transaction",      
-            "block": "Bloc",       
-            "originContract": "Contrat d'origine",        
-            "logIndex": "Indice de log",        
-            "transactionIndex": "Indice de transaction",        
-            "returnValues": "Valeurs de retour",        
-            "eventName": "Nom de l'événement"      
+        "events": {
+            "eventInfoTitle": "Événement",
+            "latest": "Derniers événements",
+            "filter": "Filtrer les événements",
+            "transactionHash": "Hash de transaction",
+            "block": "Bloc",
+            "originContract": "Contrat d'origine",
+            "logIndex": "Indice de log",
+            "transactionIndex": "Indice de transaction",
+            "returnValues": "Valeurs de retour",
+            "eventName": "Nom de l'événement"
         },
         "transactions": {
             "transactionInfoTitle": "Transaction",
@@ -126,7 +141,7 @@
             "amount": "Montant",
             "gasPrice": "Prix du gaz",
             "perMillionGas": "par millions de gaz",
-            "gasUsed": "Gaz utilisé", 
+            "gasUsed": "Gaz utilisé",
             "feePaid": "Commission payée",
             "data": "Données envoyées",
             "deployedData": "Données déployées",
@@ -145,7 +160,7 @@
             },
             "error": {
                 "noDataDeployed": "Aucune donnée n'est déployée à l'adresse du contrat !",
-                "outOfGas": "La transaction depuis __from__ à __to__ n'a pas pu s'exécuter correctement."  
+                "outOfGas": "La transaction depuis __from__ à __to__ n'a pas pu s'exécuter correctement."
             },
             "types": {
                 "executeContract": "Exécution du contrat",
@@ -168,7 +183,7 @@
                 },
                 "outgoingTransaction": {
                     "title": "Paiement envoyé",
-                    "text": "Vous avez envoyé __amount__ depuis __from__ à __to__."    
+                    "text": "Vous avez envoyé __amount__ depuis __from__ à __to__."
                 },
                 "pendingConfirmation": {
                     "title": "Confirmation requise",
@@ -283,7 +298,7 @@
             }
         },
         "contracts": {
-            "contractTitle" : "Contrats",
+            "contractTitle": "Contrats",
             "deployNewContract": "Déployer un nouveau contrat",
             "addCustomContract": "Suivre un contrat",
             "customContracts": "Contrats que vous suivez",

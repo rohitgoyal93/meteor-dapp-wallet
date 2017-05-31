@@ -4,7 +4,7 @@
             "high": "Más rápido",
             "low": "Más barato"
         },
-        "checksumAlert":"Esta dirección luce válida, pero no tiene algunos mecanismos de seguridad que lo protegerán de errores de tipeo, así que verifique que sea correcta. Si se encuentra, verifique que el ícono de seguridad sea el mismo.",
+        "checksumAlert": "Esta dirección luce válida, pero no tiene algunos mecanismos de seguridad que lo protegerán de errores de tipeo, así que verifique que sea correcta. Si se encuentra, verifique que el ícono de seguridad sea el mismo.",
         "identiconHelper": "Este es un ícono de seguridad, si la dirección cambia en lo más mínimo, el ícono será completamente distinto"
     },
     "wallet": {
@@ -41,7 +41,7 @@
             },
             "warnings": {
                 "txOriginVulnerabilityWallet": "Esta cartera tiene contrato inteligente código obsoleto y está sujeto a ataques de phishing. ",
-                "txOriginVulnerabilityCallToAction":"Actualizar su contrato ahora y transferir todos sus fondos a su nueva.",
+                "txOriginVulnerabilityCallToAction": "Actualizar su contrato ahora y transferir todos sus fondos a su nueva.",
                 "txOriginVulnerabilityAccount": "Esta cuenta es un propietario de un contrato cartera vulnerables y el uso de esta cuenta en los contratos maliciosos pueden poner en peligro sus fondos carteras. Actualizar su cartera antes de realizar cualquier transacción con esta cuenta.",
                 "txOriginVulnerabilityPopup": "Encontramos carteras vulnerables! Asegúrese de implementar las nuevas carteras y mover los fondos!",
                 "learnMore": "Más información acerca de esta vulnerabilidad"
@@ -70,6 +70,21 @@
             }
         },
         "accounts": {
+            "UserWallet": "Equilibrar",
+            "CreateNewWallet": "Crear una nueva cartera",
+            "Name": "Nombre",
+            "WalletBalance": "Saldo de Wallet",
+            "WalletAddress": "Wallet Dirección",
+            "Action": "Acción",
+            "CreateWallet": "Crear Cartera",
+            "NoTransaction": "Todavía no tienes Cuentas",
+            "NoTransactionMsg": "Haga clic en el botón Agregar cuenta para crear una nueva cuenta. Asegúrese de introducir una contraseña segura.",
+            "WalletTransfer": "Transferencia de Wallet",
+            "TransactionFee": "Tarifa de transacción",
+            "Total": "Total",
+            "Date": "Fecha",
+            "Status": "Estado",
+            "Balance": "Equilibrar",
             "title": "<strong>Accounts</strong> Overview",
             "walletsTitle": "Wallet contracts",
             "accountsTitle": "Accounts",
@@ -126,7 +141,7 @@
             "amount": "Amount",
             "gasPrice": "Gas price",
             "perMillionGas": " PER MILLION GAS",
-            "gasUsed": "Gas used", 
+            "gasUsed": "Gas used",
             "feePaid": "Fee paid",
             "data": "Send data",
             "deployedData": "Deployed data",
@@ -145,7 +160,7 @@
             },
             "error": {
                 "noDataDeployed": "No data is deployed on the contract address!",
-                "outOfGas": "The transaction from __from__ to __to__ couldn't be successfully executed."  
+                "outOfGas": "The transaction from __from__ to __to__ couldn't be successfully executed."
             },
             "types": {
                 "executeContract": "Contract Execution",
@@ -168,7 +183,7 @@
                 },
                 "outgoingTransaction": {
                     "title": "Payment sent",
-                    "text": "You sent __amount__ from __from__ to __to__."    
+                    "text": "You sent __amount__ from __from__ to __to__."
                 },
                 "pendingConfirmation": {
                     "title": "Confirmation needed",
@@ -283,7 +298,7 @@
             }
         },
         "contracts": {
-            "contractTitle" : "Contracts",
+            "contractTitle": "Contracts",
             "deployNewContract": "Deploy new contract",
             "addCustomContract": "Watch contract",
             "customContracts": "Custom contracts",

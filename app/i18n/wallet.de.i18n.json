@@ -4,7 +4,7 @@
             "high": "Schneller",
             "low": "Günstiger"
         },
-        "checksumAlert":"Die Adresse scheint gültig zu sein. Jedoch fehlen Sicherheitseigenschaften, die gegen Tippfehler schützen. Bitte kontrollieren Sie daher die Adresse sehr genau. Wenn ein Sicherheitssymbol angezeigt wird, kontrollieren Sie auch, ob dieses mit dem der Adresse übereinstimmt.",
+        "checksumAlert": "Die Adresse scheint gültig zu sein. Jedoch fehlen Sicherheitseigenschaften, die gegen Tippfehler schützen. Bitte kontrollieren Sie daher die Adresse sehr genau. Wenn ein Sicherheitssymbol angezeigt wird, kontrollieren Sie auch, ob dieses mit dem der Adresse übereinstimmt.",
         "identiconHelper": "Dies ist ein Sicherheitssymbol. Unterschiedliche Addressen haben augenscheinlich verschiedene Sicherheitssymbole. Dies kann Ihnen helfen, Tippfehler frühzeitig zu erkennen."
     },
     "wallet": {
@@ -41,11 +41,11 @@
             },
             "warnings": {
                 "txOriginVulnerabilityWallet": "Diese intelligente Vertrag Geldbörse hat veraltete Code und unterliegt Phishing-Attacken. ",
-                "txOriginVulnerabilityCallToAction":"Rüsten Sie Ihren Vertrag jetzt und übertragen alle Ihre Geld auf Ihr neues.",
+                "txOriginVulnerabilityCallToAction": "Rüsten Sie Ihren Vertrag jetzt und übertragen alle Ihre Geld auf Ihr neues.",
                 "txOriginVulnerabilityAccount": "Dieses Konto ist ein Besitzer eines gefährdeten wallet Vertrag und mit diesem Konto auf böswillige Verträge können Ihre Mappen Mittel gefährden. Rüsten Sie Ihren Geldbeutel, bevor Sie Geschäfte mit diesem Konto zu tun.",
                 "txOriginVulnerabilityPopup": "Wir fanden verwundbar Portemonnaies! Achten Sie darauf, neue Geldbörsen zu implementieren und die Mittel zu bewegen!",
                 "checkThisNow": "Zeigen Sie verwundbar",
-                "checkThisLater": "Später",                
+                "checkThisLater": "Später",
                 "learnMore": "Erfahren Sie mehr zu dieser Sicherheitsanfälligkeit"
             }
         },
@@ -72,6 +72,21 @@
             }
         },
         "accounts": {
+            "UserWallet": "User Wallet",
+            "CreateNewWallet": "Create New Wallet",
+            "Name": "Name",
+            "WalletBalance": "Wallet Balance",
+            "WalletAddress": "Wallet Address",
+            "Action": "Action",
+            "CreateWallet": "Create Wallet",
+            "NoTransaction": "You have no Accounts yet",
+            "NoTransactionMsg": "Please click on Add Account button to create a new account. Please make sure to enter a strong password.",
+            "WalletTransfer": "Wallet Transfer",
+            "TransactionFee": "Transaction Fee",
+            "Total": "Total",
+            "Date": "Date",
+            "Status": "Status",
+            "Balance": "Balance",
             "title": "<strong>Konten</strong> Übersicht",
             "walletsTitle": "Wallet-Verträge",
             "accountsTitle": "Konten",
@@ -147,7 +162,7 @@
             },
             "error": {
                 "noDataDeployed": "Auf der Vertragsadresse wurden keine Daten veröffentlicht",
-                "outOfGas": "Die Transaktion von __from__ nach __to__ konnte nicht ausgeführt werden."  
+                "outOfGas": "Die Transaktion von __from__ nach __to__ konnte nicht ausgeführt werden."
             },
             "types": {
                 "executeContract": "Vertrag anwenden",
@@ -241,7 +256,7 @@
             "estimatedFee": "Gebühr bestimmen",
             "createContract": "Vertrag erstellen",
             "provideGas": "Gas zur Verfügung stellen",
-            "transactionSent": "Transaktion gesendet",            
+            "transactionSent": "Transaktion gesendet",
             "error": {
                 "emptyWallet": "Das Konto, von dem Sie senden möchten, ist leer.",
                 "notEnoughFunds": "Der Betrag auf Ihrem Konto reicht nicht aus.",
@@ -285,7 +300,7 @@
             }
         },
         "contracts": {
-            "contractTitle" : "Verträge",
+            "contractTitle": "Verträge",
             "deployNewContract": "Neue Verträge veröffentlichen",
             "addCustomContract": "Verträge beobachten",
             "customContracts": "Eigene Verträge",

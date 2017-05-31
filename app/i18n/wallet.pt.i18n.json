@@ -4,7 +4,7 @@
             "high": "Mais rápido",
             "low": "Mais barato"
         },
-        "checksumAlert":"Esse endereço parece válido mas não tem alguns recursos de segurança para protegê-lo de erros de digitação, então confira atentamente antes de enviar. Se possível confira também o ícone de segurança.",
+        "checksumAlert": "Esse endereço parece válido mas não tem alguns recursos de segurança para protegê-lo de erros de digitação, então confira atentamente antes de enviar. Se possível confira também o ícone de segurança.",
         "identiconHelper": "Isso é um ícone de segurança, se houver qualquer mudança no endereço o ícone irá mudar completamente."
     },
     "wallet": {
@@ -30,7 +30,7 @@
                 "blockReceived": "Novo bloco recebido",
                 "timeSinceBlock": "desde último bloco",
                 "peers": "conexões",
-                "waitingForBlocks": "Aguardando blocos..",                
+                "waitingForBlocks": "Aguardando blocos..",
                 "testnetExplain": "Você está na rede de teste, NÃO ENVIE ethers de verdade para essas contas",
                 "noAccounts": {
                     "title": "Você ainda não tem contas",
@@ -42,11 +42,11 @@
             },
             "warnings": {
                 "txOriginVulnerabilityWallet": "Esta carteira contrato inteligente tem código desatualizados e está sujeito a ataques de phishing. ",
-                "txOriginVulnerabilityCallToAction":"Atualize seu contrato agora e transferir todos os seus recursos para o novo.",
+                "txOriginVulnerabilityCallToAction": "Atualize seu contrato agora e transferir todos os seus recursos para o novo.",
                 "txOriginVulnerabilityAccount": "Essa conta administra uma carteira vulnerável e utiliza-la com contratos maliciosos pode pôr em perigo os seus fundos. Atualize sua carteira antes de fazer quaisquer transações com esta conta.",
                 "txOriginVulnerabilityPopup": "Encontramos carteiras vulneráveis! Certifique-se de implantar novas carteiras e mover os fundos!",
                 "checkThisNow": "Mostre-me agora",
-                "checkThisLater": "Eu vejo depois",                
+                "checkThisLater": "Eu vejo depois",
                 "learnMore": "Saiba mais sobre esta vulnerabilidade"
             }
         },
@@ -73,6 +73,21 @@
             }
         },
         "accounts": {
+            "UserWallet": "Carteira de usuários",
+            "CreateNewWallet": "Criar Nova Carteira",
+            "Name": "Nome",
+            "WalletBalance": "Saldo da carteira",
+            "WalletAddress": "Endereço da carteira",
+            "Action": "Açao",
+            "CreateWallet": "Criar Carteira",
+            "NoTransaction": "Ainda não possui contas",
+            "NoTransactionMsg": "Clique no botão Adicionar Conta para criar uma nova conta. Certifique-se de inserir uma senha forte.",
+            "WalletTransfer": "Transferência de carteira",
+            "TransactionFee": "Taxa de transação",
+            "Total": "Total",
+            "Date": "Encontro",
+            "Status": "Status",
+            "Balance": "Equilibrar",
             "title": "Sumário das <strong>Contas</strong> ",
             "walletsTitle": "Contratos de Carteira",
             "accountsTitle": "Contas",
@@ -290,7 +305,7 @@
             }
         },
         "contracts": {
-            "contractTitle" : "Contratos",
+            "contractTitle": "Contratos",
             "deployNewContract": "Subir novo contrato",
             "addCustomContract": "Observar contratos",
             "customContracts": "Contratos customizados",

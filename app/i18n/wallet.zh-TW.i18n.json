@@ -4,7 +4,7 @@
             "high": "更快",
             "low": "更便宜"
         },
-        "checksumAlert":"這個地址看起來有效，但它不具備一些防護錯別字的安全功能，所以請仔細檢查這個地址正確。如果有安全圖標的話，請確認圖標符合。",
+        "checksumAlert": "這個地址看起來有效，但它不具備一些防護錯別字的安全功能，所以請仔細檢查這個地址正確。如果有安全圖標的話，請確認圖標符合。",
         "identiconHelper": "這是一個安全圖標，如果地址有任何不同，圖標會長得完全不一樣"
     },
     "wallet": {
@@ -72,6 +72,21 @@
             }
         },
         "accounts": {
+            "UserWallet": "用户电子钱包",
+            "CreateNewWallet": "创建新电子钱包",
+            "Name": "名称",
+            "WalletBalance": "钱包余额",
+            "WalletAddress": "钱包地址",
+            "Action": "行动",
+            "CreateWallet": "创建电子钱包",
+            "NoTransaction": "你还没有帐号",
+            "NoTransactionMsg": "请点击添加帐户按钮创建一个新帐户。请确保输入强大的密码.",
+            "WalletTransfer": "钱包转帐",
+            "TransactionFee": "手续费",
+            "Total": "总",
+            "Date": "日期",
+            "Status": "状态",
+            "Balance": "平衡",
             "title": "<strong>帳戶</strong> 總覽",
             "walletsTitle": "錢包契約",
             "accountsTitle": "帳戶",
@@ -285,7 +300,7 @@
             }
         },
         "contracts": {
-            "contractTitle" : "契約",
+            "contractTitle": "契約",
             "deployNewContract": "佈署新契約",
             "addCustomContract": "新增觀察契約",
             "customContracts": "客製化契約",

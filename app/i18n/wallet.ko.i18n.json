@@ -42,7 +42,7 @@
             },
             "warnings": {
                 "txOriginVulnerabilityWallet": "이 스마트 계약 지갑 오래된 코드를 가지고 있으며, 피싱 공격을받습니다.",
-                "txOriginVulnerabilityCallToAction":"이 지금 계약을 업그레이드하고 새로운 하나에 모든 자금을 전송합니다",
+                "txOriginVulnerabilityCallToAction": "이 지금 계약을 업그레이드하고 새로운 하나에 모든 자금을 전송합니다",
                 "txOriginVulnerabilityAccount": "이 계정은 취약한 지갑 계약의 소유자와 당신의 지갑 자금을 위험에 빠​​뜨릴 수있는 악성 계약에이 계정을 사용하여입니다. 이 계정으로 모든 거래를하기 전에 당신의 지갑을 업그레이드합니다.",
                 "txOriginVulnerabilityPopup": "우리는 취약 지갑을 발견! 새 지갑을 배포하고 자금을 이동해야합니다!",
                 "learnMore": "이 취약점에 대해 자세히 알아보기"
@@ -71,6 +71,21 @@
             }
         },
         "accounts": {
+            "UserWallet": "사용자 지갑",
+            "CreateNewWallet": "새 월렛 만들기",
+            "Name": "이름",
+            "WalletBalance": "월렛 잔액",
+            "WalletAddress": "월렛 주소",
+            "Action": "동작",
+            "CreateWallet": "지갑 만들기",
+            "NoTransaction": "아직 계정이 없습니다.",
+            "NoTransactionMsg": "계정 추가 버튼을 클릭하여 새 계정을 만드십시오. 강력한 암호를 입력하십시오.",
+            "WalletTransfer": "월렛 송금",
+            "TransactionFee": "거래 수수료",
+            "Total": "합계",
+            "Date": "날짜",
+            "Status": "지위",
+            "Balance": "밸런스",
             "title": "<strong>계정</strong> 요약",
             "walletsTitle": "지갑 계약",
             "accountsTitle": "계정",
@@ -131,7 +146,7 @@
             "amount": "금액",
             "gasPrice": "개스 가격",
             "perMillionGas": " 백만 개스당",
-            "gasUsed": "개스 사용", 
+            "gasUsed": "개스 사용",
             "feePaid": "지급 수수료",
             "data": "송신 데이터",
             "deployedData": "설치한 데이터",
@@ -150,7 +165,7 @@
             },
             "error": {
                 "noDataDeployed": "컨트랙트 주소에 데이터가 설치되지 않았습니다!",
-                "outOfGas": "__from__ 로부터 __to__ 로 가는 트랜잭션이 성공적으로 수행되지 않았습니다."  
+                "outOfGas": "__from__ 로부터 __to__ 로 가는 트랜잭션이 성공적으로 수행되지 않았습니다."
             },
             "types": {
                 "executeContract": "컨트랙트 실행",
@@ -173,7 +188,7 @@
                 },
                 "outgoingTransaction": {
                     "title": "송금액",
-                    "text": " __amount__를 __from__로부터  __to__로 보냄"    
+                    "text": " __amount__를 __from__로부터  __to__로 보냄"
                 },
                 "pendingConfirmation": {
                     "title": "확인 필요",
@@ -288,7 +303,7 @@
             }
         },
         "contracts": {
-            "contractTitle" : "컨트랙트",
+            "contractTitle": "컨트랙트",
             "deployNewContract": "신규 컨트랙트 설치",
             "addCustomContract": "컨트랙트 열람",
             "customContracts": "주문형 컨트랙트",

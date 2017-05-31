@@ -4,7 +4,7 @@
             "high": "更快",
             "low": "更便宜"
         },
-        "checksumAlert":"这个地址看起来有效，但它不具备一些防护错别字的安全功能，所以请仔细检查这个地址是否正确。如果有安全图标的话，请确认图标是否符合。",
+        "checksumAlert": "这个地址看起来有效，但它不具备一些防护错别字的安全功能，所以请仔细检查这个地址是否正确。如果有安全图标的话，请确认图标是否符合。",
         "identiconHelper": "这是一个安全图标，如果地址有任何不同，图标就会完全不一样"
     },
     "wallet": {
@@ -73,6 +73,21 @@
             }
         },
         "accounts": {
+            "UserWallet": "用户电子钱包",
+            "CreateNewWallet": "创建新电子钱包",
+            "Name": "名称",
+            "WalletBalance": "钱包余额",
+            "WalletAddress": "钱包地址",
+            "Action": "行动",
+            "CreateWallet": "创建电子钱包",
+            "NoTransaction": "你还没有帐号",
+            "NoTransactionMsg": "请点击添加帐户按钮创建一个新帐户。请确保输入强大的密码.",
+            "WalletTransfer": "钱包转帐",
+            "TransactionFee": "手续费",
+            "Total": "总",
+            "Date": "日期",
+            "Status": "状态",
+            "Balance": "平衡",
             "title": "<strong>账户</strong> 总览",
             "walletsTitle": "钱包合约",
             "accountsTitle": "账户",
@@ -280,7 +295,7 @@
             "subTitle": "新增 代币",
             "admin": "__name__ (管理页面)",
             "description": "代币 是货币或者是其他基于以太坊平台的货币等价物。您需要添加代币地址到此列表，以便查看和发送代币 。您可以修改 <a href=\"http://chriseth.github.io/browser-solidity/?gist=0d1a998d949e26942212\" target=\"_blank\">定制化代币的合约规范</a> 以创建定制化的代币，或者查看 <a href=\"https://www.ethereum.org/token#the-code\" target=\"_blank\">Ethereum Tokens</a> 进行深入学习。",
-             "deleteToken": "您確定要从列表中移除 代币么 <strong>__token__</strong> ？",
+            "deleteToken": "您確定要从列表中移除 代币么 <strong>__token__</strong> ？",
             "addedToken": "添加 __token__ 至您的查看列表",
             "editedToken": "编辑 代币 __token__",
             "error": {
@@ -288,7 +303,7 @@
             }
         },
         "contracts": {
-            "contractTitle" : "合约",
+            "contractTitle": "合约",
             "deployNewContract": "部署新合约",
             "addCustomContract": "新增观察合约",
             "customContracts": "定制化合约",
