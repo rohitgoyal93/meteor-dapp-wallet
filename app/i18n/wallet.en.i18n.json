@@ -73,6 +73,24 @@
             }
         },
         "accounts": {
+            "UserWallet":"User Wallet",
+            "CreateNewWallet":"Create New Wallet",
+            "Name":"Name",
+            "WalletBalance":"Wallet Balance",
+            "WalletAddress":"Wallet Address",
+            "Action":"Action",
+           "CreateWallet":"Create Wallet",
+           "NoTransaction":"You have no Accounts yet",
+           "NoTransactionMsg":"Please click on Add Account button to create a new account. Please make sure to enter a strong password.",
+           "WalletTransfer":"Wallet Transfer",
+           "TransactionFee":"Transaction Fee",
+            "Total":"Total",
+            "Date":"Date",
+            "Status":"Status",
+            "Balance":"Balance",
+
+
+
             "title": "<strong>Accounts</strong> Overview",
             "walletsTitle": "Wallet contracts",
             "accountsTitle": "Accounts",

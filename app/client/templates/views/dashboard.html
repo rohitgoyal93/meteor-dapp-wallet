@@ -18,10 +18,10 @@
             <h2 class="clearfix">
               <div class="MT7" style="float:left;">
                 <!-- {{i18n "wallet.accounts.accountsTitle"}} -->
-                User Wallet
+              {{i18n "wallet.accounts.UserWallet"}}
                </div>
               <button style="float:right;" class="wallet-box create account btn-red">
-                  Create New Wallet
+                {{i18n "wallet.accounts.CreateNewWallet"}}
               </button>
             </h2>
             <!-- <p>
@@ -34,10 +34,10 @@
 
                 <tbody>
                   <tr>
-                    <th>Name</th>
-                    <th>Wallet Balance</th>
-                    <th>Wallet Address</th>
-                    <th>Action</th>
+                    <th>{{i18n "wallet.accounts.Name"}}</th>
+                    <th>{{i18n "wallet.accounts.WalletBalance"}}</th>
+                    <th>{{i18n "wallet.accounts.WalletAddress"}}</th>
+                    <th>{{i18n "wallet.accounts.Action"}}</th>
                   </tr>
                 {{#each accounts}}
                     <tr>
@@ -82,7 +82,9 @@
             {{/each}}
             </div>
             {{#if hasMinimumBalance}}
-                <a href="{{pathFor route='createAccount'}}" class="wallet-box create">
+                <a href="{{pathFor route='createAccount'}}" class=" Create Wallet
+                    </button>
+                {{/if}}wallet-box create">
                     <div class="account-pattern">
                         +
                     </div>
@@ -102,13 +104,13 @@
                     </button> -->
 
                     <button class="create account btn-red ">
-                        <!-- {{i18n "wallet.app.buttons.addAccount"}} --> Create Wallet
+                        <!-- {{i18n "wallet.app.buttons.addAccount"}} --> {{i18n "wallet.accounts.CreateWallet"}}
                     </button>
                 {{/if}}
             </div>
             <div class="col col-12 mobile-full" align="center">
-                <h3 class="no-record-head"> <i class="icon-wallet"></i> &nbsp; You have no Accounts yet</h3>
-                <p>Please click on Add Account button to create a new account. Please make sure to enter a strong password.</p>
+                <h3 class="no-record-head"> <i class="icon-wallet"></i> &nbsp; {{i18n "wallet.accounts.NoTransaction"}}</h3>
+                <p>{{i18n "wallet.accounts.NoTransactionMsg"}}</p>
             </div>
         {{/if}}
 
