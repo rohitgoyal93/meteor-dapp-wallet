@@ -27,16 +27,17 @@ function formatNumber(number, format){
           number = number.toString(10);
       }
 
-    format = format || '0,0.0[0000]';
+    // format = format || '0,0.0[0000]';
 
+    format = '0,0.0[0000000]';
 
     if(!_.isFinite(number)){
         number = numeral().unformat(number);
     }
 
     if(_.isFinite(number)){
-        // return numeral(number.toString(10)).format(format);
-        return new BigNumber(number).toFormat(2);
+        return numeral(number.toString(10)).format(format);
+        // return new BigNumber(number).toFormat(2);
       }
 };
 
