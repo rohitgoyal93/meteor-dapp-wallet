@@ -11,7 +11,7 @@ The header template
 @constructor
 */
 
-Template['layout_header'].onCreated(function(){
+Template['layout_header'].onCreated(function() {
     var template = this;
 });
 
@@ -26,10 +26,12 @@ Template['layout_header'].helpers({
     'goToSend': function() {
         FlowRouter.watchPathChange();
         var address = web3.toChecksumAddress(FlowRouter.getParam('address'));
-            
-        return (address)
-            ? FlowRouter.path('sendFrom', {from: address})
-            : FlowRouter.path('send');
+
+        return (address) ?
+            FlowRouter.path('sendFrom', {
+                from: address
+            }) :
+            FlowRouter.path('send');
     },
     /**
     Calculates the total balance of all accounts + wallets.
@@ -37,16 +39,51 @@ Template['layout_header'].helpers({
     @method (totalBalance)
     @return {String}
     */
-    'totalBalance': function(){
+    'totalBalance': function() {
         var accounts = EthAccounts.find({}).fetch();
-        var wallets = Wallets.find({owners: {$in: _.pluck(accounts, 'address')}}).fetch();
+        var wallets = Wallets.find({
+            owners: {
+                $in: _.pluck(accounts, 'address')
+            }
+        }).fetch();
 
-        var balance = _.reduce(_.pluck(_.union(accounts, wallets), 'balance'), function(memo, num){ return memo + Number(num); }, 0);
+        var balance = _.reduce(_.pluck(_.union(accounts, wallets), 'balance'), function(memo, num) {
+            return memo + Number(num);
+        }, 0);
 
         updateMistBadge();
 
         return balance;
     },
+
+    // 'address': function() {
+    //     if (web3.eth.coinbase) {
+    //       console.log("::::::::::::::::::::in if");
+    //         var address = EthAccounts.findOne({
+    //             address: web3.eth.coinbase
+    //         });
+    //         console.log("Address:::::::::: ", address.address);
+    //         return address.address;
+    //     } else {
+    //         console.log("No accounts found:::");
+    //         return 0;
+    //     }
+    //
+    // },
+    //
+    // 'balance': function() {
+    //     if (web3.eth.coinbase) {
+    //         var data = EthAccounts.findOne({
+    //             address: web3.eth.coinbase
+    //         });
+    //         console.log("Address:::::::::: ", data.balance);
+    //         return parseFloat(data.balance).toFixed(6);
+    //     } else {
+    //         console.log("No balnce found:::::::");
+    //         return 0;
+    //     }
+    // },
+
     /**
     Formats the last block number
 
@@ -61,10 +98,10 @@ Template['layout_header'].helpers({
 
     @method (timeSinceBlock)
     */
-    'timeSinceBlock': function () {
-        
-        if (EthBlocks.latest.timestamp == 0 
-            || typeof EthBlocks.latest.timestamp == 'undefined')   
+    'timeSinceBlock': function() {
+
+        if (EthBlocks.latest.timestamp == 0 ||
+            typeof EthBlocks.latest.timestamp == 'undefined')
             return false;
 
         var timeSince = moment(EthBlocks.latest.timestamp, "X");
@@ -90,10 +127,10 @@ Template['layout_header'].helpers({
 
     @method (timeSinceBlockText)
     */
-    'timeSinceBlockText': function () {
-        
-        if (EthBlocks.latest.timestamp == 0 
-            || typeof EthBlocks.latest.timestamp == 'undefined')   
+    'timeSinceBlockText': function() {
+
+        if (EthBlocks.latest.timestamp == 0 ||
+            typeof EthBlocks.latest.timestamp == 'undefined')
             return TAPi18n.__('wallet.app.texts.waitingForBlocks');
 
         var timeSince = moment(EthBlocks.latest.timestamp, "X");

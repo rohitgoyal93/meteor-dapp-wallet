@@ -62,6 +62,20 @@ FlowRouter.route('/send', {
 });
 
 /**
+@method receive
+*/
+FlowRouter.route('/receive/:address/:balance', {
+    name: 'receive',
+    action: function(params, queryParams) {
+        BlazeLayout.render('layout_main', {
+            header: 'layout_header',
+            main: 'views_receive'
+        });
+    }
+});
+
+
+/**
 The Coins route.
 
 @method tokens
@@ -190,4 +204,3 @@ FlowRouter.route('/account/:address', {
         });
     }
 });
-

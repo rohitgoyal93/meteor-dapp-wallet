@@ -22,6 +22,14 @@
                  <span>{{i18n 'wallet.app.buttons.send'}}</span>
              </a>
          </li>
+
+         <li>
+             <a href="{{pathFor route='receive' address=address balance=balance}}" class="{{isActiveRoute regex='receive'}}">
+                <!-- <span class="icon-send"></span> -->
+                 <!-- <i class="icon-arrow-up"></i> -->
+                 <span>Receive</span>
+             </a>
+         </li>
       </ul>
 
         <ul class="pull-right">
