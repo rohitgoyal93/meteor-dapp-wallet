@@ -1,7 +1,6 @@
 <template name="views_receive">
 
-
-
+      {{#if hasAccounts}}
       <div class="dapp-container accounts-page">
 
           <div class="accounts-page-summary">
@@ -35,7 +34,12 @@
                 <div class="MT10" align="center"> {{> elements_balance balance=balance changeUnit=false showAllDecimals=true}} </div>
 
           </div>
-
     </div>
-
+      {{else}}
+      <div class="dapp-container accounts-page">
+      <div class="col col-12 mobile-full" align="center">
+          <h3 class="no-record-head"> <i class="icon-wallet"></i> &nbsp; {{i18n "wallet.accounts.NoTransaction"}}</h3>
+      </div>
+    </div>
+    {{/if}}
 </template>

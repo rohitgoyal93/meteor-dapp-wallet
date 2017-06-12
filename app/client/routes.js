@@ -11,9 +11,11 @@ FlowRouter.notFound = {
 };
 
 // redirect on start to dahsboard on file protocol
-if(location.origin === 'file://') {
+if (location.origin === 'file://') {
     FlowRouter.wait();
-    FlowRouter.initialize({hashbang: true});
+    FlowRouter.initialize({
+        hashbang: true
+    });
 
     Meteor.startup(function() {
         FlowRouter.go('dashboard');
@@ -21,7 +23,7 @@ if(location.origin === 'file://') {
 }
 
 
-FlowRouter.triggers.enter([function(){
+FlowRouter.triggers.enter([function() {
     EthElements.Modal.hide();
     $(window).scrollTop(0);
 }, updateMistMenu]);
@@ -64,7 +66,7 @@ FlowRouter.route('/send', {
 /**
 @method receive
 */
-FlowRouter.route('/receive/:address/:balance', {
+FlowRouter.route('/receive', {
     name: 'receive',
     action: function(params, queryParams) {
         BlazeLayout.render('layout_main', {

@@ -56,34 +56,6 @@ Template['layout_header'].helpers({
         return balance;
     },
 
-    // 'address': function() {
-    //     if (web3.eth.coinbase) {
-    //       console.log("::::::::::::::::::::in if");
-    //         var address = EthAccounts.findOne({
-    //             address: web3.eth.coinbase
-    //         });
-    //         console.log("Address:::::::::: ", address.address);
-    //         return address.address;
-    //     } else {
-    //         console.log("No accounts found:::");
-    //         return 0;
-    //     }
-    //
-    // },
-    //
-    // 'balance': function() {
-    //     if (web3.eth.coinbase) {
-    //         var data = EthAccounts.findOne({
-    //             address: web3.eth.coinbase
-    //         });
-    //         console.log("Address:::::::::: ", data.balance);
-    //         return parseFloat(data.balance).toFixed(6);
-    //     } else {
-    //         console.log("No balnce found:::::::");
-    //         return 0;
-    //     }
-    // },
-
     /**
     Formats the last block number
 
