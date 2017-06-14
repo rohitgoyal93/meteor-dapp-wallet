@@ -44,7 +44,7 @@ function formatNumber(number, format){
 
 Template.registerHelper( 'getDaxxString', function(number,format){
       number = web3.fromWei(number, 'ether');
-      return formatNumber(number, format) +' '+ "DaxxCoin";
+      return formatNumber(number, format) +' '+ "Daxx";
       // return formatNumber(number, format) +' '+ LocalStore.get('etherUnit');
 });
 
