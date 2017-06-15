@@ -52,10 +52,7 @@ Template['elements_transactions_table'].helpers({
             collection = window[this.collection] || Transactions,
             selector = this.ids ? {_id: {$in: this.ids}} : {};
 
-            // console.log("search ")
-            console.log("windows",window[this.collection]);
-            console.log("Transactions",Transactions);
-
+            
         // if search
         if(searchQuery) {
             var pattern = new RegExp('^.*'+ searchQuery.replace(/ +/g,'.*') +'.*$','i');
@@ -183,15 +180,16 @@ Template['elements_transactions_row'].helpers({
     */
     'fromNowTime': function(){
         Helpers.rerun['10s'].tick();
-
         var diff = moment().diff(moment.unix(this.timestamp), 'hours');
-        return (diff < 23) ? ' '+ moment.unix(this.timestamp).fromNow() : '';
+        //return (diff < 23) ? ' '+ moment.unix(this.timestamp).fromNow() : '';
+        return ' '+ moment.unix(this.timestamp).fromNow();
     },
     /**
     Returns the confirmations
     @method (totalConfirmations)
     */
     'totalConfirmations': blocksForConfirmation,
+
     /**
     Checks whether the transaction is confirmed ot not.
     @method (unConfirmed)
