@@ -589,6 +589,16 @@ Template['views_send'].events({
                         gas: estimatedGas
                     }, function(error, txHash){
 
+                       if(txHash)
+                        {
+                           GlobalNotification.success({
+                                        content: 'i18n:wallet.send.transactionSentSuccess',
+                                        duration: 8
+                                    });
+
+                         }
+
+
                         TemplateVar.set(template, 'sending', false);
 
                         console.log(error, txHash);
@@ -631,6 +641,15 @@ Template['views_send'].events({
                         gasPrice: gasPrice,
                         gas: estimatedGas
                     }, function(error, txHash){
+
+                        if(txHash)
+                        {
+                           GlobalNotification.success({
+                                        content: 'i18n:wallet.send.transactionSentSuccess',
+                                        duration: 8
+                                    });
+
+                         }
 
                         TemplateVar.set(template, 'sending', false);
 

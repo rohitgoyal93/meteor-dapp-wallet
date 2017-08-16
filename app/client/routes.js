@@ -63,6 +63,16 @@ FlowRouter.route('/send', {
     }
 });
 
+FlowRouter.route('/transaction', {
+    name: 'transaction',
+    action: function(params, queryParams) {
+        BlazeLayout.render('layout_main', {
+            header: 'layout_header',
+            main: 'views_transaction'
+        });
+    }
+});
+
 /**
 @method receive
 */

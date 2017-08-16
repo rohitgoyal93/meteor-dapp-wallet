@@ -40,7 +40,7 @@
                     <th>{{i18n "wallet.accounts.Action"}}</th>
                   </tr>
                 {{#each accounts}}
-                    <tr>
+                    <tr title="Click On Wallet Name To See Transaction Details" style="text-decoration: underline;padding-bottom: -10px; box-shadow: 10px 4px #132342">
                     <!-- {{> elements_account account=_id}} -->
                     {{> elements_accountRow account=_id}}
                   </tr>
@@ -61,7 +61,7 @@
 
             <!-- <h2>{{i18n "wallet.accounts.walletsTitle"}}</h2> -->
 
-            <!-- {{#if hasMinimumBalance}}
+            {{#if hasMinimumBalance}}
                 <p>
                     {{i18n "wallet.accounts.walletsDescription"}}
                 </p>
@@ -69,11 +69,11 @@
                 <p>
                     {{{i18n "wallet.accounts.walletsDescriptionNotEnoughFunds"}}}
                 </p>
-            {{/if}} -->
+            {{/if}}
 
 
 
-            <!-- <div class="wallet-box-list">
+            <div class="wallet-box-list">
             {{#each wallets}}
                 {{> elements_account account=_id wallets=true}}
             {{/each}}
@@ -81,17 +81,14 @@
                 {{> elements_account account=_id wallets=true}}
             {{/each}}
             </div>
-            {{#if hasMinimumBalance}}
-                <a href="{{pathFor route='createAccount'}}" class=" Create Wallet
-                    </button>
-                {{/if}}wallet-box create">
+             {{#if hasMinimumBalance}}
+                <a href="{{pathFor route='createAccount'}}" class="wallet-box create">
                     <div class="account-pattern">
                         +
                     </div>
                     <h3>{{i18n "wallet.app.buttons.addWallet"}}</h3>
                 </a>
-            {{/if}} -->
-
+            {{/if}}
         {{else}}
             <div class="col col-12 mobile-full ">
                 <br>
