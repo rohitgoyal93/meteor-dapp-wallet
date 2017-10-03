@@ -1,21 +1,11 @@
 <template name="views_dashboard">
     <div class="dapp-container">
-
         <h1>
           <!--{{{i18n "wallet.accounts.title"}}}-->
           Wallet Information
-        </h1>
-
-        {{#if pendingConfirmations}}
-            <h2>{{i18n 'wallet.transactions.pendingConfirmations'}}</h2>
-
-            {{> elements_transactions_table collection="PendingConfirmations" ids=pendingConfirmations }}
-
-        {{/if}}
-
-        {{#if hasAccounts}}
-
-            <h2 class="clearfix">
+        </h1> {{#if pendingConfirmations}}
+        <h2>{{i18n 'wallet.transactions.pendingConfirmations'}}</h2> {{> elements_transactions_table collection="PendingConfirmations" ids=pendingConfirmations }} {{/if}} {{#if hasAccounts}}
+        <h2 class="clearfix">
               <div class="MT7" style="float:left;">
                 <!-- {{i18n "wallet.accounts.accountsTitle"}} -->
               {{i18n "wallet.accounts.UserWallet"}}
@@ -24,96 +14,76 @@
                 {{i18n "wallet.accounts.CreateNewWallet"}}
               </button>
             </h2>
-            <!-- <p>
+        <!-- <p>
                 {{i18n "wallet.accounts.accountsDescription"}}
             </p> -->
-            <div class="dapp-clear-fix"></div>
-
-            <div class="wallet-box-list">
-              <table class="table table-bordered">
-
+        <div class="dapp-clear-fix"></div>
+        <div class="wallet-box-list">
+            <table class="table table-bordered">
                 <tbody>
-                  <tr>
-                    <th>{{i18n "wallet.accounts.Name"}}</th>
-                    <th>{{i18n "wallet.accounts.WalletBalance"}}</th>
-                    <th>{{i18n "wallet.accounts.WalletAddress"}}</th>
-                    <th>{{i18n "wallet.accounts.Action"}}</th>
-                  </tr>
-                {{#each accounts}}
+                    <tr>
+                        <th>{{i18n "wallet.accounts.Name"}}</th>
+                        <th>{{i18n "wallet.accounts.WalletBalance"}}</th>
+                        <th>{{i18n "wallet.accounts.WalletAddress"}}</th>
+                        <th>{{i18n "wallet.accounts.Action"}}</th>
+                    </tr>
+                    {{#each accounts}}
                     <tr title="Click On Wallet Name To See Transaction Details" style="text-decoration: underline;padding-bottom: -10px; box-shadow: 10px 4px #132342">
-                    <!-- {{> elements_account account=_id}} -->
-                    {{> elements_accountRow account=_id}}
-                  </tr>
-                {{/each}}
-              </tbody>
-              </table>
-            </div>
-
-            {{#if isMist}}
-                <!-- <button class="wallet-box create account">
+                        <!-- {{> elements_account account=_id}} -->
+                        {{> elements_accountRow account=_id}}
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        {{#if isMist}}
+        <!-- <button class="wallet-box create account">
                     <div class="account-pattern">
                         +
                     </div>
                     <h3 class="account-pattern">{{i18n "wallet.app.buttons.addAccount"}}</h3>
                 </button> -->
-            {{/if}}
-
-
-            <!-- <h2>{{i18n "wallet.accounts.walletsTitle"}}</h2> -->
-
-            {{#if hasMinimumBalance}}
-                <p>
-                    {{i18n "wallet.accounts.walletsDescription"}}
-                </p>
-            {{else}}
-                <p>
-                    {{{i18n "wallet.accounts.walletsDescriptionNotEnoughFunds"}}}
-                </p>
-            {{/if}}
-
-
-
-            <div class="wallet-box-list">
-            {{#each wallets}}
-                {{> elements_account account=_id wallets=true}}
-            {{/each}}
-            {{#each (wallets true)}}
-                {{> elements_account account=_id wallets=true}}
-            {{/each}}
-            </div>
-             {{#if hasMinimumBalance}}
-                <a href="{{pathFor route='createAccount'}}" class="wallet-box create">
-                    <div class="account-pattern">
-                        +
-                    </div>
-                    <h3>{{i18n "wallet.app.buttons.addWallet"}}</h3>
-                </a>
-            {{/if}}
+        {{/if}}
+        <!-- <h2>{{i18n "wallet.accounts.walletsTitle"}}</h2> -->
+        {{#if hasMinimumBalance}}
+        <p>
+            {{i18n "wallet.accounts.walletsDescription"}}
+        </p>
         {{else}}
-            <div class="col col-12 mobile-full ">
-                <br>
-                {{#if isMist}}
-                    <!-- <button class="wallet-box create account">
+        <p>
+            {{{i18n "wallet.accounts.walletsDescriptionNotEnoughFunds"}}}
+        </p>
+        {{/if}}
+        <div class="wallet-box-list">
+            {{#each wallets}} {{> elements_account account=_id wallets=true}} {{/each}} {{#each (wallets true)}} {{> elements_account account=_id wallets=true}} {{/each}}
+        </div>
+        {{#if hasMinimumBalance}}
+        <a href="{{pathFor route='createAccount'}}" class="wallet-box create">
+            <div class="account-pattern">
+                +
+            </div>
+            <h3>{{i18n "wallet.app.buttons.addWallet"}}</h3>
+        </a>
+        {{/if}} {{else}}
+        <div class="col col-12 mobile-full ">
+            <br> {{#if isMist}}
+            <!-- <button class="wallet-box create account">
                         <div class="account-pattern">
                             +
                         </div>
                         <h3>{{i18n "wallet.app.buttons.addAccount"}}</h3>
                     </button> -->
-
-                    <button class="create account btn-red ">
-                        <!-- {{i18n "wallet.app.buttons.addAccount"}} --> {{i18n "wallet.accounts.CreateWallet"}}
-                    </button>
-                {{/if}}
-            </div>
-            <div class="col col-12 mobile-full" align="center">
-                <h3 class="no-record-head"> <i class="icon-wallet"></i> &nbsp; {{i18n "wallet.accounts.NoTransaction"}}</h3>
-                <p>{{i18n "wallet.accounts.NoTransactionMsg"}}</p>
-            </div>
+            <button class="create account btn-red ">
+                <!-- {{i18n "wallet.app.buttons.addAccount"}} -->{{i18n "wallet.accounts.CreateWallet"}}
+            </button>
+            {{/if}}
+        </div>
+        <div class="col col-12 mobile-full" align="center">
+            <h3 class="no-record-head"> <i class="icon-wallet"></i> &nbsp; {{i18n "wallet.accounts.NoTransaction"}}</h3>
+            <p>{{i18n "wallet.accounts.NoTransactionMsg"}}</p>
+        </div>
         {{/if}}
-
         <div class="dapp-clear-fix"></div>
-
-
         <!-- {{#if allTransactions}}
             <h2>{{i18n 'wallet.transactions.latest'}}</h2>
             {{> elements_transactions_table limit=5}}

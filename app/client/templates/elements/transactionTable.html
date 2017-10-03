@@ -110,12 +110,12 @@
                     {{#if tokenId}}
                         {{tokenValue}}
                     {{else}}
-                        {{formatTransactionBalance value exchangeRates}}
+                        <span style="color:green;">   {{getDaxxString value exchangeRates}}</span>
                     {{/if}}
                 </td>
 
                 <td>
-                    <i class="icon-arrow-left plus"></i>
+               <i style="color:#15c;font-style:normal;cursor:pointer;">Detail</i>
                 </td>
             {{else}}
                 <td class="transaction-amount minus">
@@ -171,7 +171,7 @@
                     </td>
                     {{else}}
                     <td class="info" colspan="2">
-                        <i class="icon-info"></i> {{i18n "wallet.transactions.noOwnerAccount"}}
+                        <i class="icon-info">details</i> {{i18n "wallet.transactions.noOwnerAccount"}}
                     </td>
                     {{/if}}
                 {{/if}}
